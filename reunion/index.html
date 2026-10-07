@@ -369,11 +369,18 @@ h1 em,h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:tex
 .lz-think:after{content:"";position:absolute;left:50%;bottom:-14px;width:12px;height:12px;border-radius:50%;background:inherit;border:1px solid var(--border);transform:translateX(-50%)}
 
 
-.proj{display:grid;grid-template-columns:330px 1fr;gap:18px;align-items:start;--s1:#4a3aa7;--s2:#1baf7a;--s3:#2a78d6}
+.proj{display:grid;grid-template-columns:400px 1fr;gap:18px;align-items:start;--s1:#4a3aa7;--s2:#1baf7a;--s3:#2a78d6}
 :root[data-theme="dark"] .proj{--s1:#9085e9;--s2:#199e70;--s3:#3987e5}
 .pin{display:grid;gap:6px}
 .pgrp{background:var(--surface);border:1px solid var(--border-soft);border-radius:14px;padding:6px 12px;box-shadow:var(--card-sh)}
 .pgrp small{display:block;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:2px}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 8px}
+.fld{display:flex;flex-direction:column;gap:2px;font-size:11px;color:var(--ink-dim);line-height:1.2}
+.fld span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fld .ctl-v{width:100%;font-size:13px;padding:4px 7px}
+.pinfo{margin-top:5px;padding-top:5px;border-top:1px dashed var(--border);font-size:11.5px;line-height:1.45;color:var(--ink-2)}
+.pinfo b{color:var(--ink)}.pinfo .warn{color:var(--bad-ink);font-weight:700}
+.proj-s{overflow-y:auto}
 .ctl{padding:3px 0}
 .ctl-h{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12.5px;line-height:1.25;color:var(--ink-dim)}
 .ctl-v{font:inherit;font-size:15px;font-weight:700;color:var(--ink);background:var(--surface-2);border:1.5px solid var(--border);border-radius:9px;padding:6px 10px;width:150px;text-align:right;cursor:text}
@@ -392,7 +399,7 @@ h1 em,h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:tex
 .pchart{position:relative;background:var(--surface);border:1px solid var(--border-soft);border-radius:14px;padding:10px 14px 8px}
 .pch-h{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px}
 .legend{display:flex;gap:12px;font-size:11.5px;color:var(--ink-2)}.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
-.bars{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;height:175px;align-items:end;margin-top:6px;border-bottom:1px solid var(--border)}
+.bars{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;height:150px;align-items:end;margin-top:6px;border-bottom:1px solid var(--border)}
 .bcol{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;cursor:default}
 .bcol .tv{font-size:11px;font-weight:700;color:var(--ink);margin-bottom:3px;font-variant-numeric:tabular-nums;white-space:nowrap}
 .bstack{width:min(54px,100%);display:flex;flex-direction:column-reverse;gap:2px}
@@ -737,10 +744,10 @@ h1 em,h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:tex
 <!-- PROYECCIÓN BASE EN VIVO -->
 <section class="slide proj-s" data-name="Tu proyección base">
   <div class="wrap">
-    <div class="kicker" data-r>Proyección base en vivo · Mismo equipo, mismos costos fijos</div>
+    <div class="kicker" data-r>Proyección base en vivo · Mismo equipo, mismos costos fijos · Estimación, no promesa</div>
     <h2 data-r="2" style="max-width:none;margin-bottom:12px">Tu clínica hoy vs. <em>con los 2 canales</em></h2>
     <div class="proj" data-r="3">
-      <div class="pin"><div class="pgrp"><small>Tu clínica hoy</small><div class="ctl"><div class="ctl-h"><span>Facturación al mes</span><input class="ctl-v" data-k="fact" data-f="cop" inputmode="decimal"></div></div><div class="ctl"><div class="ctl-h"><span>Ticket promedio</span><input class="ctl-v" data-k="ticket" data-f="cop" inputmode="decimal"></div></div><div class="ctl"><div class="ctl-h"><span>Costo del producto</span><input class="ctl-v" data-k="costo" data-f="pct" inputmode="decimal"></div></div><div class="ctl"><div class="ctl-h"><span>Costos fijos al mes</span><input class="ctl-v" data-k="fijos" data-f="cop" inputmode="decimal"></div></div><div class="ctl"><div class="ctl-h"><span>Capacidad al mes</span><input class="ctl-v" data-k="cap" data-f="n" inputmode="decimal"></div></div></div><div class="pgrp"><small>Canal 1 · Pauta directa</small><div class="ctl"><div class="ctl-h"><span>Inversión en pauta</span><input class="ctl-v" data-k="pauta" data-f="cop" inputmode="decimal"></div></div><div class="ctl"><div class="ctl-h"><span>Retorno base (veces la pauta)</span><input class="ctl-v" data-k="roas" data-f="x" inputmode="decimal"></div></div></div><div class="pgrp"><small>Canal 2 · Recurrencia</small><div class="ctl"><div class="ctl-h"><span>Pacientes en tu base de datos</span><input class="ctl-v" data-k="base" data-f="n" inputmode="decimal"></div></div><div class="ctl"><div class="ctl-h"><span>% que vuelve al mes</span><input class="ctl-v" data-k="react" data-f="pct" inputmode="decimal"></div></div><div class="ctl"><div class="ctl-h"><span>Ticket de lo que vuelven</span><input class="ctl-v" data-k="trec" data-f="cop" inputmode="decimal"></div></div></div><p class="src" style="margin-top:2px">Escribe los números del doctor en cada casilla (Enter o Tab para pasar a la siguiente). Valores de ejemplo; estimación base, no promesa.</p></div>
+      <div class="pin"><div class="pgrp"><small>Tu clínica hoy</small><div class="fgrid"><label class="fld"><span>Pacientes al mes</span><input class="ctl-v" data-k="pac" data-f="n" inputmode="decimal"></label><label class="fld"><span>Ticket promedio</span><input class="ctl-v" data-k="ticket" data-f="cop" inputmode="decimal"></label><label class="fld"><span>Costos variables %</span><input class="ctl-v" data-k="var" data-f="pct" inputmode="decimal"></label><label class="fld"><span>Costos fijos</span><input class="ctl-v" data-k="fijos" data-f="cop" inputmode="decimal"></label><label class="fld"><span>Citas por día</span><input class="ctl-v" data-k="citas" data-f="n" inputmode="decimal"></label><label class="fld"><span>Días al mes</span><input class="ctl-v" data-k="dias" data-f="n" inputmode="decimal"></label><label class="fld"><span>Pauta hoy (0 si no)</span><input class="ctl-v" data-k="pautaHoy" data-f="cop" inputmode="decimal"></label><label class="fld"><span>Pacientes por pauta</span><input class="ctl-v" data-k="ventasAds" data-f="n" inputmode="decimal"></label></div><p class="pinfo" id="pjHoyInfo"></p></div><div class="pgrp"><small>Canal 1 · Pauta directa</small><div class="fgrid"><label class="fld"><span>Inversión pauta</span><input class="ctl-v" data-k="inv" data-f="cop" inputmode="decimal"></label><label class="fld"><span>Costo por mensaje</span><input class="ctl-v" data-k="cpl" data-f="cop" inputmode="decimal"></label><label class="fld"><span>% que agenda</span><input class="ctl-v" data-k="agenda" data-f="pct" inputmode="decimal"></label><label class="fld"><span>% que asiste</span><input class="ctl-v" data-k="asiste" data-f="pct" inputmode="decimal"></label><label class="fld"><span>% que compra</span><input class="ctl-v" data-k="cierre" data-f="pct" inputmode="decimal"></label></div><p class="pinfo" id="pjC1Info"></p></div><div class="pgrp"><small>Canal 2 · Recurrencia (sin pauta)</small><div class="fgrid"><label class="fld"><span>Base de datos</span><input class="ctl-v" data-k="base" data-f="n" inputmode="decimal"></label><label class="fld"><span>% vuelve al año</span><input class="ctl-v" data-k="vuelve" data-f="pct" inputmode="decimal"></label><label class="fld"><span>Ticket de lo que vuelven</span><input class="ctl-v" data-k="trec" data-f="cop" inputmode="decimal"></label></div><p class="pinfo" id="pjC2Info"></p></div><p class="src" style="margin-top:0">Escribe los números del doctor (Enter pasa a la siguiente). Valores de ejemplo; estimación base, no promesa.</p></div>
       <div class="pout">
         <div class="pl" id="pjPL"></div>
         <div class="pdelta" id="pjDelta"></div>
@@ -884,48 +891,59 @@ document.getElementById('crmTxt').textContent=cop(PRECIO.crm);
 document.getElementById('prodTxt').textContent=cop(PRECIO.produccion);
 
 /* ===================== PROYECCIÓN BASE EN VIVO ===================== */
-// Valores de ejemplo: JP los mueve en la reunión con los números del doctor.
-const PROY={fact:40000000,ticket:3000000,costo:30,fijos:20000000,cap:30,pauta:2250000,roas:10,base:800,react:2,trec:400000};
-// Rampa: mes 1 construcción (pauta desde la semana 3), mes 2 aprendizaje, desde el mes 3 el ritmo base (sin suponer mejoras)
+// Valores de ejemplo: JP los reemplaza en la reunión con los números del doctor (verificacion_margenes_proyeccion_base.md, datos 1-17).
+const PROY={pac:13,ticket:3000000,var:30,fijos:20000000,citas:2,dias:20,pautaHoy:0,ventasAds:0,
+  inv:2250000,cpl:10000,agenda:20,asiste:70,cierre:25,base:800,vuelve:10,trec:400000};
+const RETORNO_BASE=10; // proyección base documentada: 10x sobre la pauta (condiciones_comerciales.md, 2026-10-06)
+// Rampa: mes 1 construcción (pauta desde la semana 3), mes 2 aprendizaje, desde el mes 3 ritmo base (sin suponer mejoras)
 const RAMPA={ingresoPauta:[.25,.7,1,1,1,1],gastoPauta:[.5,1,1,1,1,1],recurrencia:[0,.5,1,1,1,1]};
 (function(){
-  const $=id=>document.getElementById(id),M=v=>v>=1e6?'$'+(v/1e6).toFixed(1).replace('.',',')+'M':cop(v);
-  const vals=[...document.querySelectorAll('.ctl-v')],rng=[];
-  const show=el=>{const v=PROY[el.dataset.k],f=el.dataset.f;el.value=f==='cop'?cop(v):f==='pct'?String(v).replace('.',',')+'%':f==='x'?String(v).replace('.',',')+'x':Math.round(v).toLocaleString('es-CO')};
-  const sync=k=>{vals.forEach(e=>e.dataset.k===k&&document.activeElement!==e&&show(e));rng.forEach(r=>{if(r.dataset.k===k)r.value=PROY[k]})};
-  rng.forEach(r=>{r.value=PROY[r.dataset.k];r.addEventListener('input',()=>{PROY[r.dataset.k]=+r.value;sync(r.dataset.k);calc()})});
+  const $=id=>document.getElementById(id),M=v=>(v<0?'−':'')+(Math.abs(v)>=1e6?'$'+(Math.abs(v)/1e6).toFixed(1).replace('.',',')+'M':cop(Math.abs(v)));
+  const N=v=>(Math.round(v*10)/10).toLocaleString('es-CO');
+  const vals=[...document.querySelectorAll('.ctl-v')];
+  const show=el=>{const v=PROY[el.dataset.k],f=el.dataset.f;el.value=f==='cop'?cop(v):f==='pct'?String(v).replace('.',',')+'%':Math.round(v*10)/10+''};
   vals.forEach(el=>{show(el);el.addEventListener('focus',()=>{el.value=String(PROY[el.dataset.k]).replace('.',',');el.select()});
-    el.addEventListener('input',()=>{const v=parseFloat(el.value.replace(/[^0-9,]/g,'').replace(',','.'));if(isFinite(v)){PROY[el.dataset.k]=v;sync(el.dataset.k);calc()}});
-    el.addEventListener('blur',()=>show(el));el.addEventListener('keydown',e=>{if(e.key==='Enter'){const k=vals.indexOf(el);(vals[k+1]||el).focus();if(!vals[k+1])el.blur()}})});
-  function mes(f,P){ // un mes con el canal; f = índice de la rampa (o null = ritmo base)
-    const kP=f==null?1:RAMPA.ingresoPauta[f],kG=f==null?1:RAMPA.gastoPauta[f],kR=f==null?1:RAMPA.recurrencia[f];
-    const ventasHoy=P.ticket?P.fact/P.ticket:0,libre=Math.max(0,P.cap-ventasHoy),plan=P.ticket?P.pauta*P.roas*kP/P.ticket:0,v=Math.min(plan,libre);
-    const fPauta=v*P.ticket,fRec=P.base*P.react/100*P.trec*kR,atrib=fPauta+fRec,com=Math.max(0,atrib-PRECIO.umbral)*PRECIO.pct,c=P.costo/100;
-    const tot=P.fact+atrib,gasto=P.pauta*kG,u=tot*(1-c)-P.fijos-gasto-PRECIO.fee-com-PRECIO.crm;
-    return {fPauta,fRec,tot,c,gasto,com,u,over:plan>libre,usados:ventasHoy+v}}
-  function calc(){const P=PROY,c=P.costo/100,uHoy=P.fact*(1-c)-P.fijos,B=mes(null,P);
-    const r=(t,a,b,cl='',sw='')=>{const d=(typeof a==='number'&&typeof b==='number')?b-a:null;
-      return `<div class="r ${cl}"><span>${sw}${t}</span><b>${typeof a==='number'?cop(a):a}</b><b>${typeof b==='number'?cop(b):b}</b><b class="${d==null?'':d>0?'up':d<0?'dn':''}">${d==null?'':(d>0?'+':'')+cop(d)}</b></div>`};
+    el.addEventListener('input',()=>{const v=parseFloat(el.value.replace(/[^0-9,]/g,'').replace(',','.'));PROY[el.dataset.k]=isFinite(v)?v:0;calc()});
+    el.addEventListener('blur',()=>show(el));el.addEventListener('keydown',e=>{if(e.key==='Enter'){const k=vals.indexOf(el);if(vals[k+1])vals[k+1].focus();else el.blur()}})});
+  function base(P){const cap=P.citas*P.dias,fact=P.pac*P.ticket,v=P.var/100;
+    // canal 1: embudo completo
+    const msj=P.cpl?P.inv/P.cpl:0,cit=msj*P.agenda/100,asis=cit*P.asiste/100,ven=asis*P.cierre/100;
+    // canal 2: anual
+    const vuelvenAno=P.base*P.vuelve/100,recAno=vuelvenAno*P.trec;
+    return {cap,fact,v,msj,cit,asis,ven,vuelvenAno,recAno,cpa:ven?P.inv/ven:0,ret:P.inv?ven*P.ticket/P.inv:0}}
+  function mes(f,P,b){const kP=f==null?1:RAMPA.ingresoPauta[f],kG=f==null?1:RAMPA.gastoPauta[f],kR=f==null?1:RAMPA.recurrencia[f];
+    const libre=Math.max(0,b.cap-P.pac);
+    const recPac=Math.min(b.vuelvenAno/12*kR,libre),fRec=recPac*P.trec;          // la recurrencia también ocupa agenda
+    const planNuevos=Math.max(0,b.ven*kP-P.ventasAds),nuevos=Math.min(planNuevos,Math.max(0,libre-recPac)); // lo que suma sobre la pauta de hoy
+    const canalVentas=Math.min(b.ven*kP,P.ventasAds+nuevos),fInc=nuevos*P.ticket;
+    const atrib=canalVentas*P.ticket+fRec,com=Math.max(0,atrib-PRECIO.umbral)*PRECIO.pct;
+    const tot=b.fact+fInc+fRec,gasto=Math.max(P.pautaHoy,P.inv*kG),u=tot*(1-b.v)-P.fijos-gasto-PRECIO.fee-com-PRECIO.crm;
+    return {fInc,fRec,tot,gasto,com,u,over:planNuevos+P.pac+recPac>b.cap+1e-6,usados:P.pac+recPac+nuevos,nuevos,recPac}}
+  function calc(){const P=PROY,b=base(P),B=mes(null,P,b),uHoy=b.fact*(1-b.v)-P.fijos-P.pautaHoy;
+    $('pjHoyInfo').innerHTML=`Facturación hoy: <b>${cop(b.fact)}</b> (${N(P.pac)} × ${cop(P.ticket)}) · Capacidad: <b>${N(b.cap)} citas al mes</b> · Costo por venta hoy: `+(P.pautaHoy>0&&P.ventasAds>0?`<b>${cop(P.pautaHoy/P.ventasAds)}</b>`:'<b>no pauta hoy</b>, no es un límite');
+    const tope=b.ret>RETORNO_BASE*1.5;
+    $('pjC1Info').innerHTML=`${cop(P.inv)} → <b>${N(b.msj)} mensajes</b> → ${N(b.cit)} agendan → ${N(b.asis)} asisten → <b>${N(b.ven)} compran</b> al mes · Costo por venta <b>${cop(b.cpa)}</b> · Retorno <b>${N(b.ret)}x</b>`
+      +(tope?`<br><span class="warn">⚠ Por encima de la base de ${RETORNO_BASE}x: con estas tasas la proyección es optimista. Revísalas antes de mostrarla.</span>`:'');
+    $('pjC2Info').innerHTML=`${N(P.base)} pacientes × ${String(P.vuelve).replace('.',',')}% = <b>${N(b.vuelvenAno)} vuelven en el año</b> × ${cop(P.trec)} = <b>${cop(b.recAno)} al año</b> (≈ ${cop(b.recAno/12)} al mes). Con recordatorios por procedimiento, oferta a la base dormida y referidos. No usa pauta.`;
+    const r=(t,a,c2,cl='',sw='')=>{const d=c2-a;return `<div class="r ${cl}"><span>${sw}${t}</span><b>${cop(a)}</b><b>${cop(c2)}</b><b class="${d>0?'up':d<0?'dn':''}">${(d>0?'+':'')+cop(d)}</b></div>`};
     const sw=v=>`<i class="sw" style="background:var(--${v})"></i>`;
     $('pjPL').innerHTML=`<div class="r h"><span>Al mes (desde el mes 3)</span><b>Hoy</b><b>Con los 2 canales</b><b>Diferencia</b></div>`
-      +r('Facturación de hoy',P.fact,P.fact,'',sw('s1'))+r('+ Canal 1 · Pauta directa',0,B.fPauta,'',sw('s3'))+r('+ Canal 2 · Recurrencia',0,B.fRec,'',sw('s2'))
-      +r('− Costo del producto ('+P.costo+'%)',-P.fact*c,-B.tot*c)+r('− Costos fijos (los mismos)',-P.fijos,-P.fijos)+r('− Pauta (a Meta)',0,-B.gasto)
+      +r('Facturación de hoy',b.fact,b.fact,'',sw('s1'))+r('+ Canal 1 · Pauta directa ('+N(B.nuevos)+' pacientes más)',0,B.fInc,'',sw('s3'))+r('+ Canal 2 · Recurrencia ('+N(B.recPac)+' pacientes)',0,B.fRec,'',sw('s2'))
+      +r('− Costos variables ('+P.var+'%)',-b.fact*b.v,-B.tot*b.v)+r('− Costos fijos (los mismos)',-P.fijos,-P.fijos)+r('− Pauta (a Meta)',-P.pautaHoy,-B.gasto)
       +r('− Growth Partner (fee + 10% sobre $20M)',0,-(PRECIO.fee+B.com))+r('− CRM, IA y WhatsApp',0,-PRECIO.crm)+r('= Te queda al mes (antes de impuestos)',uHoy,B.u,'t');
     const d=B.u-uHoy,dl=$('pjDelta');dl.classList.toggle('neg',d<0);
-    dl.textContent=d>=0?`+${cop(d)} más al mes para ti después de pagar todo (antes de impuestos) · ${cop(d*12)} en un año`:`Con estos números no da (${cop(d)} al mes): revisamos ticket, margen o capacidad antes de proponerte nada.`;
-    // gráfica
-    const cols=[{l:'Hoy',s:'',fp:0,fr:0,tot:P.fact,u:uHoy}].concat([0,1,2,3,4,5].map(k=>{const m=mes(k,P);return {l:'Mes '+(k+1),s:['construcción','aprendizaje','ritmo base','','',''][k],fp:m.fPauta,fr:m.fRec,tot:m.tot,u:m.u,g:m.gasto,com:m.com}}));
+    dl.textContent=d>=0?`+${cop(d)} más al mes después de pagar todo · ${cop(d*12)} en un año (antes de impuestos)`:`Con estos números no da (${cop(d)} al mes): revisamos ticket, costos o capacidad antes de proponerte nada.`;
+    const cols=[{l:'Hoy',s:'',fp:0,fr:0,tot:b.fact,u:uHoy}].concat([0,1,2,3,4,5].map(k=>{const m=mes(k,P,b);return {l:'Mes '+(k+1),s:['construcción','aprendizaje','ritmo base','','',''][k],fp:m.fInc,fr:m.fRec,tot:m.tot,u:m.u}}));
     const max=Math.max(...cols.map(c=>c.tot))*1.12||1,H=$('pjBars').clientHeight-18;
     $('pjBars').innerHTML=cols.map((c,k)=>`<div class="bcol" data-i="${k}"><span class="tv">${M(c.tot)}</span><div class="bstack">
-      <div style="height:${P.fact/max*H}px;background:var(--s1)"></div><div style="height:${c.fr/max*H}px;background:var(--s2)"></div><div style="height:${c.fp/max*H}px;background:var(--s3)"></div></div></div>`).join('')
-      +'';
+      <div style="height:${b.fact/max*H}px;background:var(--s1)"></div><div style="height:${c.fr/max*H}px;background:var(--s2)"></div><div style="height:${c.fp/max*H}px;background:var(--s3)"></div></div></div>`).join('');
     let xl=$('pjXl');if(!xl){xl=document.createElement('div');xl.className='xl';xl.id='pjXl';$('pjBars').after(xl)}
     xl.innerHTML=cols.map((c,k)=>`<div><b>${c.l}</b><em>${c.s||'&nbsp;'}</em><div class="${k&&c.u>uHoy?'gain':''}">Te queda ${M(c.u)}</div></div>`).join('');
-    const tip=$('pjTip');$('pjBars').querySelectorAll('.bcol').forEach(el=>{el.onmouseenter=()=>{const c=cols[+el.dataset.i],tr=(a,b)=>`<div class="tr"><span>${a}</span><b>${b}</b></div>`;
-      tip.innerHTML=`<b>${c.l}</b>`+tr('Facturación de hoy',cop(P.fact))+tr('Recurrencia',cop(c.fr))+tr('Pauta directa',cop(c.fp))+tr('Total',cop(c.tot))+tr('Te queda',cop(c.u));
-      const pr=el.closest('.pchart').getBoundingClientRect(),er=el.getBoundingClientRect();tip.style.left=Math.min(pr.width-215,Math.max(0,er.left-pr.left-60))+'px';tip.style.top='34px';tip.style.opacity=1};
+    const tip=$('pjTip');$('pjBars').querySelectorAll('.bcol').forEach(el=>{el.onmouseenter=()=>{const c=cols[+el.dataset.i],tr=(a,v)=>`<div class="tr"><span>${a}</span><b>${v}</b></div>`;
+      tip.innerHTML=`<b>${c.l}</b>`+tr('Facturación de hoy',cop(b.fact))+tr('Recurrencia',cop(c.fr))+tr('Pauta directa (suma)',cop(c.fp))+tr('Total',cop(c.tot))+tr('Te queda (antes de impuestos)',cop(c.u));
+      const pr=el.closest('.pchart').getBoundingClientRect(),er=el.getBoundingClientRect();tip.style.left=Math.min(pr.width-235,Math.max(0,er.left-pr.left-60))+'px';tip.style.top='34px';tip.style.opacity=1};
       el.onmouseleave=()=>tip.style.opacity=0});
-    $('pjCapNote').textContent=(B.over?'⚠ La pauta traería más pacientes de los que tu clínica atiende hoy: la proyección se corta en tu capacidad ('+P.cap+' al mes). Para crecer más hace falta agenda o equipo. ':'Capacidad usada desde el mes 3: '+Math.round(B.usados)+' de '+P.cap+' procedimientos. ')+'La recurrencia no usa pauta: son pacientes que ya te conocen. Si hoy ya pagas pauta, súmala en costos fijos.'}
+    $('pjCapNote').textContent=(B.over?`⚠ Tu agenda se llena: con ${N(b.cap)} citas al mes la proyección se corta en tu capacidad. Para crecer más hace falta sumar citas o equipo. `:`Agenda usada desde el mes 3: ${N(B.usados)} de ${N(b.cap)} citas al mes. `)+'El canal 1 solo cuenta los pacientes que suma sobre los que ya trae tu pauta de hoy.'}
   window.projCalc=calc;calc();
 })();
 
