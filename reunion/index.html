@@ -368,6 +368,34 @@ h1 em,h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:tex
 .lz-think{position:absolute;z-index:3;transform:translate(-50%,-100%);background:var(--surface);color:var(--ink);border:1px solid var(--border);font-weight:700;font-size:14px;padding:10px 14px;border-radius:18px;white-space:nowrap;box-shadow:0 12px 34px rgba(27,42,74,.18);pointer-events:none}
 .lz-think:after{content:"";position:absolute;left:50%;bottom:-14px;width:12px;height:12px;border-radius:50%;background:inherit;border:1px solid var(--border);transform:translateX(-50%)}
 
+
+.proj{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:start}
+.pin{display:grid;gap:10px}
+.pgrp{background:var(--surface);border:1px solid var(--border-soft);border-radius:16px;padding:12px 14px;box-shadow:var(--card-sh);display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}
+.pgrp small{grid-column:1/-1;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+.pgrp label{display:flex;flex-direction:column;gap:4px;font-size:11.5px;color:var(--ink-dim);line-height:1.25}
+.pgrp input{font:inherit;font-size:15px;font-weight:700;color:var(--ink);background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:7px 10px;width:100%}
+.pgrp input:focus{outline:2px solid var(--accent);border-color:transparent}
+.pcmp{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pcmp>div{border-radius:16px;padding:14px 16px;background:var(--surface);border:1px solid var(--border-soft)}
+.pcmp>div.best{background:linear-gradient(135deg,#2E75B6,#1B2A4A 75%);border:0;color:#fff;box-shadow:0 0 0 2px var(--lime)}
+.pcmp small{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;opacity:.8}
+.pcmp b{display:block;font-size:clamp(24px,2.4vw,32px);letter-spacing:-.04em;line-height:1.1;margin-top:6px}
+.pcmp b.sm{font-size:clamp(18px,1.7vw,23px);margin-top:10px}
+.pcmp span{font-size:12px;opacity:.8}
+.pdelta{margin:10px 0;padding:10px 14px;border-radius:14px;background:var(--lime);color:var(--lime-ink);font-weight:700;font-size:15px;letter-spacing:-.02em}
+.ptab{background:var(--surface);border:1px solid var(--border-soft);border-radius:16px;padding:6px 16px}
+.ptab .sr{padding:7px 0;font-size:13px}.ptab .sr.tot{font-size:14.5px}.ptab .sr.tot b{color:var(--accent)}
+.pcap{margin-top:10px}.pcap .row{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-dim);margin-bottom:6px}.pcap .row b{color:var(--ink)}
+.pcap .bar{margin-bottom:4px}.pcap .bar i{transition:width .4s}.pcap.over .bar i{background:#D92D20}
+.costs{margin:24px auto 0;max-width:980px;text-align:left}
+.costs-h{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin-bottom:10px}
+.costs-h b{font-size:17px;letter-spacing:-.02em}.costs-h span{font-size:13px;color:var(--ink-dim)}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cc{background:var(--surface);border:1px solid var(--border-soft);border-radius:16px;padding:14px 16px;box-shadow:var(--card-sh)}
+.cc small{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+.cc b{display:block;font-size:18px;letter-spacing:-.03em;margin:6px 0 4px}.cc p{font-size:12.5px;color:var(--ink-2);line-height:1.4}
+
 /* ---------- responsive ---------- */
 @media (max-width:980px){
   .slide{padding:76px 18px 92px;align-items:flex-start;overflow-y:auto}
@@ -379,7 +407,8 @@ h1 em,h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:tex
   .stage-bg{position:relative;inset:auto;width:100%;flex:0 0 40vh;height:40vh;border-radius:20px;margin-bottom:14px}
   .s-bg .wrap{display:flex;flex-direction:column}
   .glass{max-width:none}
-  .t2,.t3,.rec3,.refs,.flowgrid{grid-template-columns:1fr}
+  .t2,.t3,.rec3,.refs,.flowgrid,.proj{grid-template-columns:1fr}
+  .cgrid{grid-template-columns:1fr 1fr}
   .flowgrid .stage3d{height:44vh}
   .fsteps{flex-direction:row;overflow-x:auto;gap:6px;padding-bottom:4px}
   .fsteps li{flex:0 0 auto}.fsteps button{padding:7px 10px}.fsteps button small{display:none}.fsteps button b{font-size:12px;white-space:nowrap}
@@ -681,6 +710,44 @@ h1 em,h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:tex
   </div>
 </section>
 
+<!-- PROYECCIÓN BASE EN VIVO -->
+<section class="slide" data-name="Tu proyección base">
+  <div class="wrap">
+    <div class="kicker" data-r>Proyección base · Con tus números, en vivo · Mismo equipo y mismos costos fijos</div>
+    <h2 data-r="2" style="max-width:none;margin-bottom:14px">Lo que tu clínica podría ganar con <em>los 2 canales</em></h2>
+    <div class="proj" data-r="3">
+      <div class="pin">
+        <div class="pgrp"><small>Tu clínica hoy</small>
+          <label>Facturación promedio al mes<input data-k="fact" inputmode="numeric"></label>
+          <label>Ticket promedio del procedimiento<input data-k="ticket" inputmode="numeric"></label>
+          <label>Costo del producto (% de lo que cobras)<input data-k="costo" inputmode="numeric" data-pct></label>
+          <label>Costos fijos al mes (nómina, arriendo, servicios)<input data-k="fijos" inputmode="numeric"></label>
+          <label>Capacidad: procedimientos al mes como máximo<input data-k="cap" inputmode="numeric" data-n></label>
+        </div>
+        <div class="pgrp"><small>Canal 1 · Pauta directa</small>
+          <label>Inversión en pauta al mes<input data-k="pauta" inputmode="numeric"></label>
+          <label>Retorno base sobre la pauta (veces)<input data-k="roas" inputmode="numeric" data-n></label>
+        </div>
+        <div class="pgrp"><small>Canal 2 · Recurrencia</small>
+          <label>Pacientes en tu base de datos<input data-k="base" inputmode="numeric" data-n></label>
+          <label>% que vuelve al mes con recordatorios y oferta<input data-k="react" inputmode="numeric" data-pct></label>
+          <label>Ticket de lo que vuelven a hacerse<input data-k="trec" inputmode="numeric"></label>
+        </div>
+        <p class="src">Valores de ejemplo: se cambian con los números del doctor en la reunión. Es una estimación base con tu palabra, no una promesa de resultado; al iniciar se verifica con tus datos reales.</p>
+      </div>
+      <div class="pout">
+        <div class="pcmp">
+          <div><small>Hoy</small><b id="pjHoyF"></b><span>facturación al mes</span><b class="sm" id="pjHoyU"></b><span>te queda al mes</span></div>
+          <div class="best"><small>Con los 2 canales</small><b id="pjNewF"></b><span>facturación al mes</span><b class="sm" id="pjNewU"></b><span>te queda al mes</span></div>
+        </div>
+        <div class="pdelta" id="pjDelta"></div>
+        <div class="ptab" id="pjTab"></div>
+        <div class="pcap"><div class="row"><span id="pjCapT"></span><b id="pjCapP"></b></div><div class="bar g"><i id="pjCapBar"></i></div><p class="src" id="pjCapNote"></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CUPOS + PREGUNTA -->
 <section class="slide" data-name="Cupos de octubre">
   <div class="wrap">
@@ -699,16 +766,20 @@ h1 em,h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:tex
 <section class="slide cta" data-name="Inversión y garantía">
   <div class="wrap">
     <div class="kicker" data-r>Tu inversión</div>
-    <div class="price" data-r="2">$3.500.000<small> / mes</small></div>
-    <p class="plus" data-r="3">+ el <b class="gold">10%</b> solo de lo que tu clínica facture <b>por encima de $20 millones al mes</b> por el canal. Si no pasas de $20 millones, no hay porcentaje. Compromiso de 90 días.</p>
+    <div class="price" data-r="2" id="feeTxt"></div>
+    <p class="plus" data-r="3" id="feePlus"></p>
     <div class="guar" data-r="4">
       <div class="shield">✓</div>
       <div><b>Si en 90 días no le sumamos $20 millones mensuales a tu clínica, dejamos de cobrarte el fee hasta lograrlo.</b><p>Solo pagas el porcentaje de lo que factures por el canal, por hasta 90 días más. Las condiciones van por escrito en la propuesta.</p></div>
     </div>
-    <div class="steps3" data-r="5">
-      <div class="card"><div class="num">01</div><h3>Separas tu cupo</h3><p>Uno de los cupos de este mes queda a tu nombre.</p></div>
-      <div class="card"><div class="num">02</div><h3>3 semanas</h3><p>Construimos oferta, anuncios, IA y capacitamos a tu equipo.</p></div>
-      <div class="card"><div class="num">03</div><h3>Llegan pacientes</h3><p>Se activa el canal y medimos cada peso contra lo facturado.</p></div>
+    <div class="costs" data-r="5">
+      <div class="costs-h"><b>Lo que pagas directo, sin costos escondidos</b><span>Se le paga a cada plataforma, no a nosotros. Fuera de esto no te cobramos nada adicional.</span></div>
+      <div class="cgrid">
+        <div class="cc"><small>Cada mes</small><b id="crmTxt"></b><p>CRM, agente de IA y WhatsApp.</p></div>
+        <div class="cc"><small>Cada mes · a Meta</small><b>$2.000.000 – $2.500.000</b><p>Pauta promedio. Cuando encontramos tu costo por paciente, escalamos.</p></div>
+        <div class="cc"><small>Primer mes · una vez</small><b id="prodTxt"></b><p>Producción de los anuncios.</p></div>
+        <div class="cc"><small>Solo si hace falta · una vez</small><b>$175.000 + dominio</b><p>Página para verificar tu cuenta comercial de Meta.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -750,7 +821,7 @@ document.getElementById('tgl').onclick=()=>{const r=document.documentElement,t=r
 document.getElementById('prev').onclick=()=>go(cur-1);document.getElementById('next').onclick=()=>go(cur+1);
 document.querySelectorAll('[data-go="next"]').forEach(b=>b.onclick=()=>go(cur+1));
 addEventListener('keydown',e=>{if(e.target.matches('input,[contenteditable]'))return;if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(cur+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(cur-1)}});
-let tx=null;addEventListener('touchstart',e=>{tx=e.target.closest('.stage3d,.phone')?null:e.touches[0].clientX},{passive:true});
+let tx=null;addEventListener('touchstart',e=>{tx=e.target.closest('.stage3d,.phone,.proj')?null:e.touches[0].clientX},{passive:true});
 addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>60)go(cur+(dx<0?1:-1));tx=null});
 
 /* ===================== OPCIÓN 1: APLASTAR ===================== */
@@ -794,6 +865,47 @@ addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0]
   document.getElementById('wowBtn').onclick=window.wowReveal;
   document.getElementById('toWow').onclick=()=>{go(cur+1);setTimeout(window.wowReveal,900)};
   show(0);
+})();
+
+/* ===================== PRECIO Y COSTOS (una sola fuente) ===================== */
+const PRECIO={fee:3500000,pct:.10,umbral:20000000,crm:345000,produccion:1000000};
+const cop=n=>'$'+Math.round(n).toLocaleString('es-CO');
+document.getElementById('feeTxt').innerHTML=cop(PRECIO.fee)+'<small> / mes</small>';
+document.getElementById('feePlus').innerHTML=`+ el <b class="gold">${PRECIO.pct*100}%</b> solo de lo que tu clínica facture <b>por encima de $${PRECIO.umbral/1e6} millones al mes</b> por el canal. Si no pasas de $${PRECIO.umbral/1e6} millones, no hay porcentaje. Compromiso de 90 días.`;
+document.getElementById('crmTxt').textContent=cop(PRECIO.crm);
+document.getElementById('prodTxt').textContent=cop(PRECIO.produccion);
+
+/* ===================== PROYECCIÓN BASE EN VIVO ===================== */
+// Valores de ejemplo: JP los cambia en la reunión con los números del doctor.
+const PROY={fact:40000000,ticket:3000000,costo:30,fijos:20000000,cap:30,pauta:2250000,roas:10,base:800,react:2,trec:400000};
+(function(){
+  const ins=[...document.querySelectorAll('.proj input')],$=id=>document.getElementById(id);
+  const fmt=(el,v)=>el.value=el.hasAttribute('data-pct')?String(v).replace('.',',')+'%':el.hasAttribute('data-n')?String(v).replace('.',','):cop(v);
+  const num=el=>{const v=parseFloat(el.value.replace(/[^0-9,]/g,'').replace(',','.'));return isFinite(v)?v:0};
+  ins.forEach(el=>{fmt(el,PROY[el.dataset.k]);
+    el.addEventListener('focus',()=>{el.value=String(PROY[el.dataset.k]).replace('.',',');el.select()});
+    el.addEventListener('input',()=>{PROY[el.dataset.k]=num(el);calc()});
+    el.addEventListener('blur',()=>fmt(el,PROY[el.dataset.k]));
+    el.addEventListener('keydown',e=>{if(e.key==='Enter')el.blur()})});
+  function calc(){const P=PROY,m=1-P.costo/100,ventasHoy=P.ticket?P.fact/P.ticket:0,libre=Math.max(0,P.cap-ventasHoy);
+    // canal 1: pauta x retorno base, limitado por la capacidad libre
+    const ventasPautaPlan=P.ticket?P.pauta*P.roas/P.ticket:0,ventasPauta=Math.min(ventasPautaPlan,libre),fPauta=ventasPauta*P.ticket;
+    // canal 2: recurrencia de la base de datos (no usa pauta)
+    const fRec=P.base*P.react/100*P.trec;
+    const atrib=fPauta+fRec,com=Math.max(0,atrib-PRECIO.umbral)*PRECIO.pct;
+    const uHoy=P.fact*m-P.fijos,costoNuevo=atrib*(1-m);
+    const uNew=uHoy+atrib-costoNuevo-P.pauta-PRECIO.fee-com-PRECIO.crm,d=uNew-uHoy;
+    $('pjHoyF').textContent=cop(P.fact);$('pjHoyU').textContent=cop(uHoy);$('pjNewF').textContent=cop(P.fact+atrib);$('pjNewU').textContent=cop(uNew);
+    $('pjDelta').textContent=d>=0?`+${cop(d)} más al mes para ti, después de pagar todo`:`Con estos números no da: ${cop(d)} al mes. Revisamos ticket, margen o capacidad antes de proponerte nada.`;
+    const r=(t,v,c='')=>`<div class="sr ${c}"><span>${t}</span><b>${v}</b></div>`;
+    $('pjTab').innerHTML=r('Canal 1 · Pauta directa ('+ventasPauta.toFixed(1).replace('.',',')+' procedimientos)',cop(fPauta))+r('Canal 2 · Recurrencia ('+Math.round(P.base*P.react/100)+' pacientes que vuelven)',cop(fRec))
+      +r('− Costo del producto de lo nuevo ('+P.costo+'%)',cop(costoNuevo))+r('− Pauta (a Meta)',cop(P.pauta))+r('− Fee Growth Partner',cop(PRECIO.fee))
+      +r('− '+PRECIO.pct*100+'% de lo que pase de $'+PRECIO.umbral/1e6+'M del canal',cop(com))+r('− CRM, IA y WhatsApp',cop(PRECIO.crm))+r('= Te queda de más al mes',cop(d),'tot');
+    const usados=ventasHoy+ventasPauta,pc=P.cap?usados/P.cap:0,cb=$('pjCapBar').closest('.pcap');
+    $('pjCapT').textContent=`Capacidad usada: ${Math.round(usados)} de ${P.cap} procedimientos`;$('pjCapP').textContent=Math.round(pc*100)+'%';$('pjCapBar').style.width=Math.min(100,pc*100)+'%';
+    const over=ventasPautaPlan>libre;cb.classList.toggle('over',over);
+    $('pjCapNote').textContent=over?'La pauta traería más pacientes de los que tu clínica puede atender hoy: la proyección se corta en tu capacidad. Para crecer más hace falta sumar agenda o equipo.':'Con el mismo equipo y los mismos costos fijos. La recurrencia no usa pauta: son pacientes que ya te conocen.'}
+  calc();
 })();
 
 /* ===================== CUPOS + PREGUNTA ===================== */
