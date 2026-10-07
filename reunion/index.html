@@ -369,25 +369,41 @@ h1 em,h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:tex
 .lz-think:after{content:"";position:absolute;left:50%;bottom:-14px;width:12px;height:12px;border-radius:50%;background:inherit;border:1px solid var(--border);transform:translateX(-50%)}
 
 
-.proj{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:start}
-.pin{display:grid;gap:10px}
-.pgrp{background:var(--surface);border:1px solid var(--border-soft);border-radius:16px;padding:12px 14px;box-shadow:var(--card-sh);display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}
-.pgrp small{grid-column:1/-1;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--accent)}
-.pgrp label{display:flex;flex-direction:column;gap:4px;font-size:11.5px;color:var(--ink-dim);line-height:1.25}
-.pgrp input{font:inherit;font-size:15px;font-weight:700;color:var(--ink);background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:7px 10px;width:100%}
-.pgrp input:focus{outline:2px solid var(--accent);border-color:transparent}
-.pcmp{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.pcmp>div{border-radius:16px;padding:14px 16px;background:var(--surface);border:1px solid var(--border-soft)}
-.pcmp>div.best{background:linear-gradient(135deg,#2E75B6,#1B2A4A 75%);border:0;color:#fff;box-shadow:0 0 0 2px var(--lime)}
-.pcmp small{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;opacity:.8}
-.pcmp b{display:block;font-size:clamp(24px,2.4vw,32px);letter-spacing:-.04em;line-height:1.1;margin-top:6px}
-.pcmp b.sm{font-size:clamp(18px,1.7vw,23px);margin-top:10px}
-.pcmp span{font-size:12px;opacity:.8}
-.pdelta{margin:10px 0;padding:10px 14px;border-radius:14px;background:var(--lime);color:var(--lime-ink);font-weight:700;font-size:15px;letter-spacing:-.02em}
-.ptab{background:var(--surface);border:1px solid var(--border-soft);border-radius:16px;padding:6px 16px}
-.ptab .sr{padding:7px 0;font-size:13px}.ptab .sr.tot{font-size:14.5px}.ptab .sr.tot b{color:var(--accent)}
-.pcap{margin-top:10px}.pcap .row{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-dim);margin-bottom:6px}.pcap .row b{color:var(--ink)}
-.pcap .bar{margin-bottom:4px}.pcap .bar i{transition:width .4s}.pcap.over .bar i{background:#D92D20}
+.proj{display:grid;grid-template-columns:330px 1fr;gap:18px;align-items:start;--s1:#4a3aa7;--s2:#1baf7a;--s3:#2a78d6}
+:root[data-theme="dark"] .proj{--s1:#9085e9;--s2:#199e70;--s3:#3987e5}
+.pin{display:grid;gap:6px}
+.pgrp{background:var(--surface);border:1px solid var(--border-soft);border-radius:14px;padding:6px 12px;box-shadow:var(--card-sh)}
+.pgrp small{display:block;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:2px}
+.ctl{padding:0}
+.ctl-h{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:11.5px;line-height:1.2;color:var(--ink-dim)}
+.ctl-v{font:inherit;font-size:13px;font-weight:700;color:var(--ink);background:transparent;border:1px solid transparent;border-radius:7px;padding:1px 6px;width:118px;text-align:right}
+.ctl-v:hover{border-color:var(--border)}.ctl-v:focus{outline:2px solid var(--accent)}
+.ctl input[type=range]{width:100%;accent-color:#2E75B6;height:14px;margin:0;cursor:pointer}
+.pl{background:var(--surface);border:1px solid var(--border-soft);border-radius:14px;padding:4px 14px;font-size:12.5px}
+.pl .r{display:grid;grid-template-columns:1fr 110px 120px 110px;gap:8px;padding:4px 0;border-bottom:1px solid var(--border-soft);align-items:center}
+.pl .r:last-child{border-bottom:0}
+.pl .r span{color:var(--ink-dim)}.pl .r b{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+.pl .r.h b,.pl .r.h span{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);font-weight:700}
+.pl .r.t{font-size:14px}.pl .r.t span{color:var(--ink);font-weight:700}.pl .r.t b{font-weight:800}
+.pl .r b.up{color:var(--good)}.pl .r b.dn{color:var(--bad-ink)}
+.pl i.sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:0}
+.pdelta{margin:8px 0;padding:9px 14px;border-radius:12px;background:var(--lime);color:var(--lime-ink);font-weight:700;font-size:15px;letter-spacing:-.02em}
+.pdelta.neg{background:rgba(155,44,44,.12);color:var(--bad-ink)}
+.pchart{position:relative;background:var(--surface);border:1px solid var(--border-soft);border-radius:14px;padding:10px 14px 8px}
+.pch-h{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px}
+.legend{display:flex;gap:12px;font-size:11.5px;color:var(--ink-2)}.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.bars{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;height:175px;align-items:end;margin-top:6px;border-bottom:1px solid var(--border)}
+.bcol{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;cursor:default}
+.bcol .tv{font-size:11px;font-weight:700;color:var(--ink);margin-bottom:3px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bstack{width:min(54px,100%);display:flex;flex-direction:column-reverse;gap:2px}
+.bstack div{transition:height .45s cubic-bezier(.2,.7,.2,1)}
+.bstack div:last-child{border-radius:4px 4px 0 0}
+.bcol:hover .bstack{filter:brightness(1.12)}
+.xl{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-top:4px;text-align:center;font-size:11px;color:var(--ink-dim)}
+.xl b{display:block;color:var(--ink);font-size:11px}.xl em{font-style:normal;font-size:10px;color:var(--ink-faint)}
+.xl .gain{color:var(--good);font-weight:700}
+.ptip{position:absolute;pointer-events:none;opacity:0;transition:opacity .15s;z-index:5;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:8px 10px;font-size:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);min-width:200px;background-color:var(--bg)}
+.ptip .tr{display:flex;justify-content:space-between;gap:12px}.ptip .tr b{font-variant-numeric:tabular-nums}
 .costs{margin:24px auto 0;max-width:980px;text-align:left}
 .costs-h{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin-bottom:10px}
 .costs-h b{font-size:17px;letter-spacing:-.02em}.costs-h span{font-size:13px;color:var(--ink-dim)}
@@ -397,6 +413,12 @@ h1 em,h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:tex
 .cc b{display:block;font-size:18px;letter-spacing:-.03em;margin:6px 0 4px}.cc p{font-size:12.5px;color:var(--ink-2);line-height:1.4}
 
 /* ---------- responsive ---------- */
+@media (min-width:981px) and (max-height:860px){
+  .proj-s{padding-top:76px;padding-bottom:80px}.proj-s h2{font-size:34px;margin-bottom:8px!important}.proj-s .kicker{margin-bottom:8px}
+  .pl .r{padding:2px 0}.pl{font-size:12px}.pdelta{margin:6px 0;padding:6px 12px;font-size:14px}
+  .bars{height:110px}.pchart{padding:6px 12px 4px}.xl em{display:none}.ctl-h{font-size:11px}.pgrp{padding:4px 10px}.pin .src{display:none}
+}
+
 @media (max-width:980px){
   .slide{padding:76px 18px 92px;align-items:flex-start;overflow-y:auto}
   .two,.techs,.wow,.rec{grid-template-columns:1fr;gap:20px}
@@ -408,6 +430,8 @@ h1 em,h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:tex
   .s-bg .wrap{display:flex;flex-direction:column}
   .glass{max-width:none}
   .t2,.t3,.rec3,.refs,.flowgrid,.proj{grid-template-columns:1fr}
+  .pl .r{grid-template-columns:1fr 84px 92px 84px;font-size:11px;gap:4px}
+  .bars,.xl{gap:5px}.bars{height:150px}.bcol .tv{font-size:9px}.legend{gap:8px}
   .cgrid{grid-template-columns:1fr 1fr}
   .flowgrid .stage3d{height:44vh}
   .fsteps{flex-direction:row;overflow-x:auto;gap:6px;padding-bottom:4px}
@@ -711,38 +735,21 @@ h1 em,h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:tex
 </section>
 
 <!-- PROYECCIÓN BASE EN VIVO -->
-<section class="slide" data-name="Tu proyección base">
+<section class="slide proj-s" data-name="Tu proyección base">
   <div class="wrap">
-    <div class="kicker" data-r>Proyección base · Con tus números, en vivo · Mismo equipo y mismos costos fijos</div>
-    <h2 data-r="2" style="max-width:none;margin-bottom:14px">Lo que tu clínica podría ganar con <em>los 2 canales</em></h2>
+    <div class="kicker" data-r>Proyección base en vivo · Mismo equipo, mismos costos fijos</div>
+    <h2 data-r="2" style="max-width:none;margin-bottom:12px">Tu clínica hoy vs. <em>con los 2 canales</em></h2>
     <div class="proj" data-r="3">
-      <div class="pin">
-        <div class="pgrp"><small>Tu clínica hoy</small>
-          <label>Facturación promedio al mes<input data-k="fact" inputmode="numeric"></label>
-          <label>Ticket promedio del procedimiento<input data-k="ticket" inputmode="numeric"></label>
-          <label>Costo del producto (% de lo que cobras)<input data-k="costo" inputmode="numeric" data-pct></label>
-          <label>Costos fijos al mes (nómina, arriendo, servicios)<input data-k="fijos" inputmode="numeric"></label>
-          <label>Capacidad: procedimientos al mes como máximo<input data-k="cap" inputmode="numeric" data-n></label>
-        </div>
-        <div class="pgrp"><small>Canal 1 · Pauta directa</small>
-          <label>Inversión en pauta al mes<input data-k="pauta" inputmode="numeric"></label>
-          <label>Retorno base sobre la pauta (veces)<input data-k="roas" inputmode="numeric" data-n></label>
-        </div>
-        <div class="pgrp"><small>Canal 2 · Recurrencia</small>
-          <label>Pacientes en tu base de datos<input data-k="base" inputmode="numeric" data-n></label>
-          <label>% que vuelve al mes con recordatorios y oferta<input data-k="react" inputmode="numeric" data-pct></label>
-          <label>Ticket de lo que vuelven a hacerse<input data-k="trec" inputmode="numeric"></label>
-        </div>
-        <p class="src">Valores de ejemplo: se cambian con los números del doctor en la reunión. Es una estimación base con tu palabra, no una promesa de resultado; al iniciar se verifica con tus datos reales.</p>
-      </div>
+      <div class="pin"><div class="pgrp"><small>Tu clínica hoy</small><div class="ctl"><div class="ctl-h"><span>Facturación al mes</span><input class="ctl-v" data-k="fact" data-f="cop" inputmode="decimal"></div><input type="range" data-k="fact" min="0" max="3e+08" step="1e+06" aria-label="Facturación al mes"></div><div class="ctl"><div class="ctl-h"><span>Ticket promedio</span><input class="ctl-v" data-k="ticket" data-f="cop" inputmode="decimal"></div><input type="range" data-k="ticket" min="200000" max="2e+07" step="100000" aria-label="Ticket promedio"></div><div class="ctl"><div class="ctl-h"><span>Costo del producto</span><input class="ctl-v" data-k="costo" data-f="pct" inputmode="decimal"></div><input type="range" data-k="costo" min="0" max="80" step="1" aria-label="Costo del producto"></div><div class="ctl"><div class="ctl-h"><span>Costos fijos al mes</span><input class="ctl-v" data-k="fijos" data-f="cop" inputmode="decimal"></div><input type="range" data-k="fijos" min="0" max="1.5e+08" step="1e+06" aria-label="Costos fijos al mes"></div><div class="ctl"><div class="ctl-h"><span>Capacidad al mes</span><input class="ctl-v" data-k="cap" data-f="n" inputmode="decimal"></div><input type="range" data-k="cap" min="5" max="300" step="1" aria-label="Capacidad (procedimientos/mes)"></div></div><div class="pgrp"><small>Canal 1 · Pauta directa</small><div class="ctl"><div class="ctl-h"><span>Inversión en pauta</span><input class="ctl-v" data-k="pauta" data-f="cop" inputmode="decimal"></div><input type="range" data-k="pauta" min="1e+06" max="2e+07" step="250000" aria-label="Inversión en pauta"></div><div class="ctl"><div class="ctl-h"><span>Retorno base (veces la pauta)</span><input class="ctl-v" data-k="roas" data-f="x" inputmode="decimal"></div><input type="range" data-k="roas" min="2" max="20" step="0.5" aria-label="Retorno base (veces la pauta)"></div></div><div class="pgrp"><small>Canal 2 · Recurrencia</small><div class="ctl"><div class="ctl-h"><span>Pacientes en tu base de datos</span><input class="ctl-v" data-k="base" data-f="n" inputmode="decimal"></div><input type="range" data-k="base" min="0" max="10000" step="50" aria-label="Pacientes en tu base de datos"></div><div class="ctl"><div class="ctl-h"><span>% que vuelve al mes</span><input class="ctl-v" data-k="react" data-f="pct" inputmode="decimal"></div><input type="range" data-k="react" min="0" max="10" step="0.5" aria-label="% que vuelve al mes"></div><div class="ctl"><div class="ctl-h"><span>Ticket de lo que vuelven</span><input class="ctl-v" data-k="trec" data-f="cop" inputmode="decimal"></div><input type="range" data-k="trec" min="100000" max="5e+06" step="50000" aria-label="Ticket de lo que vuelven a hacerse"></div></div><p class="src" style="margin-top:2px">Valores de ejemplo. Estimación base, no promesa: al iniciar se verifica con datos reales.</p></div>
       <div class="pout">
-        <div class="pcmp">
-          <div><small>Hoy</small><b id="pjHoyF"></b><span>facturación al mes</span><b class="sm" id="pjHoyU"></b><span>te queda al mes</span></div>
-          <div class="best"><small>Con los 2 canales</small><b id="pjNewF"></b><span>facturación al mes</span><b class="sm" id="pjNewU"></b><span>te queda al mes</span></div>
-        </div>
+        <div class="pl" id="pjPL"></div>
         <div class="pdelta" id="pjDelta"></div>
-        <div class="ptab" id="pjTab"></div>
-        <div class="pcap"><div class="row"><span id="pjCapT"></span><b id="pjCapP"></b></div><div class="bar g"><i id="pjCapBar"></i></div><p class="src" id="pjCapNote"></p></div>
+        <div class="pchart">
+          <div class="pch-h"><b>Cómo crece tu facturación mes a mes</b><div class="legend"><span><i style="background:var(--s1)"></i>Hoy</span><span><i style="background:var(--s2)"></i>Recurrencia</span><span><i style="background:var(--s3)"></i>Pauta directa</span></div></div>
+          <div class="bars" id="pjBars"></div>
+          <div class="ptip" id="pjTip"></div>
+        </div>
+        <p class="src" id="pjCapNote"></p>
       </div>
     </div>
   </div>
@@ -816,6 +823,7 @@ function go(i){cur=Math.max(0,Math.min(slides.length-1,i));deck.style.transform=
   try{history.replaceState(null,'','#'+(cur+1))}catch(e){}
   if(window.testiStop)window.testiStop();
   if(slides[cur].querySelector('#lionrow')&&window.lionEat)setTimeout(window.lionEat,350);
+  if(slides[cur].querySelector('#pjBars')&&window.projCalc)setTimeout(window.projCalc,60);
   if(window.on3D)window.on3D(slides[cur]);}
 document.getElementById('tgl').onclick=()=>{const r=document.documentElement,t=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=t;try{localStorage.setItem('gp:theme',t)}catch(e){}if(window.on3DTheme)window.on3DTheme()};
 document.getElementById('prev').onclick=()=>go(cur-1);document.getElementById('next').onclick=()=>go(cur+1);
@@ -869,43 +877,56 @@ addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0]
 
 /* ===================== PRECIO Y COSTOS (una sola fuente) ===================== */
 const PRECIO={fee:3500000,pct:.10,umbral:20000000,crm:345000,produccion:1000000};
-const cop=n=>'$'+Math.round(n).toLocaleString('es-CO');
+const cop=n=>(n<0?'−':'')+'$'+Math.round(Math.abs(n)).toLocaleString('es-CO');
 document.getElementById('feeTxt').innerHTML=cop(PRECIO.fee)+'<small> / mes</small>';
 document.getElementById('feePlus').innerHTML=`+ el <b class="gold">${PRECIO.pct*100}%</b> solo de lo que tu clínica facture <b>por encima de $${PRECIO.umbral/1e6} millones al mes</b> por el canal. Si no pasas de $${PRECIO.umbral/1e6} millones, no hay porcentaje. Compromiso de 90 días.`;
 document.getElementById('crmTxt').textContent=cop(PRECIO.crm);
 document.getElementById('prodTxt').textContent=cop(PRECIO.produccion);
 
 /* ===================== PROYECCIÓN BASE EN VIVO ===================== */
-// Valores de ejemplo: JP los cambia en la reunión con los números del doctor.
+// Valores de ejemplo: JP los mueve en la reunión con los números del doctor.
 const PROY={fact:40000000,ticket:3000000,costo:30,fijos:20000000,cap:30,pauta:2250000,roas:10,base:800,react:2,trec:400000};
+// Rampa: mes 1 construcción (pauta desde la semana 3), mes 2 aprendizaje, desde el mes 3 el ritmo base (sin suponer mejoras)
+const RAMPA={ingresoPauta:[.25,.7,1,1,1,1],gastoPauta:[.5,1,1,1,1,1],recurrencia:[0,.5,1,1,1,1]};
 (function(){
-  const ins=[...document.querySelectorAll('.proj input')],$=id=>document.getElementById(id);
-  const fmt=(el,v)=>el.value=el.hasAttribute('data-pct')?String(v).replace('.',',')+'%':el.hasAttribute('data-n')?String(v).replace('.',','):cop(v);
-  const num=el=>{const v=parseFloat(el.value.replace(/[^0-9,]/g,'').replace(',','.'));return isFinite(v)?v:0};
-  ins.forEach(el=>{fmt(el,PROY[el.dataset.k]);
-    el.addEventListener('focus',()=>{el.value=String(PROY[el.dataset.k]).replace('.',',');el.select()});
-    el.addEventListener('input',()=>{PROY[el.dataset.k]=num(el);calc()});
-    el.addEventListener('blur',()=>fmt(el,PROY[el.dataset.k]));
-    el.addEventListener('keydown',e=>{if(e.key==='Enter')el.blur()})});
-  function calc(){const P=PROY,m=1-P.costo/100,ventasHoy=P.ticket?P.fact/P.ticket:0,libre=Math.max(0,P.cap-ventasHoy);
-    // canal 1: pauta x retorno base, limitado por la capacidad libre
-    const ventasPautaPlan=P.ticket?P.pauta*P.roas/P.ticket:0,ventasPauta=Math.min(ventasPautaPlan,libre),fPauta=ventasPauta*P.ticket;
-    // canal 2: recurrencia de la base de datos (no usa pauta)
-    const fRec=P.base*P.react/100*P.trec;
-    const atrib=fPauta+fRec,com=Math.max(0,atrib-PRECIO.umbral)*PRECIO.pct;
-    const uHoy=P.fact*m-P.fijos,costoNuevo=atrib*(1-m);
-    const uNew=uHoy+atrib-costoNuevo-P.pauta-PRECIO.fee-com-PRECIO.crm,d=uNew-uHoy;
-    $('pjHoyF').textContent=cop(P.fact);$('pjHoyU').textContent=cop(uHoy);$('pjNewF').textContent=cop(P.fact+atrib);$('pjNewU').textContent=cop(uNew);
-    $('pjDelta').textContent=d>=0?`+${cop(d)} más al mes para ti, después de pagar todo`:`Con estos números no da: ${cop(d)} al mes. Revisamos ticket, margen o capacidad antes de proponerte nada.`;
-    const r=(t,v,c='')=>`<div class="sr ${c}"><span>${t}</span><b>${v}</b></div>`;
-    $('pjTab').innerHTML=r('Canal 1 · Pauta directa ('+ventasPauta.toFixed(1).replace('.',',')+' procedimientos)',cop(fPauta))+r('Canal 2 · Recurrencia ('+Math.round(P.base*P.react/100)+' pacientes que vuelven)',cop(fRec))
-      +r('− Costo del producto de lo nuevo ('+P.costo+'%)',cop(costoNuevo))+r('− Pauta (a Meta)',cop(P.pauta))+r('− Fee Growth Partner',cop(PRECIO.fee))
-      +r('− '+PRECIO.pct*100+'% de lo que pase de $'+PRECIO.umbral/1e6+'M del canal',cop(com))+r('− CRM, IA y WhatsApp',cop(PRECIO.crm))+r('= Te queda de más al mes',cop(d),'tot');
-    const usados=ventasHoy+ventasPauta,pc=P.cap?usados/P.cap:0,cb=$('pjCapBar').closest('.pcap');
-    $('pjCapT').textContent=`Capacidad usada: ${Math.round(usados)} de ${P.cap} procedimientos`;$('pjCapP').textContent=Math.round(pc*100)+'%';$('pjCapBar').style.width=Math.min(100,pc*100)+'%';
-    const over=ventasPautaPlan>libre;cb.classList.toggle('over',over);
-    $('pjCapNote').textContent=over?'La pauta traería más pacientes de los que tu clínica puede atender hoy: la proyección se corta en tu capacidad. Para crecer más hace falta sumar agenda o equipo.':'Con el mismo equipo y los mismos costos fijos. La recurrencia no usa pauta: son pacientes que ya te conocen.'}
-  calc();
+  const $=id=>document.getElementById(id),M=v=>v>=1e6?'$'+(v/1e6).toFixed(1).replace('.',',')+'M':cop(v);
+  const vals=[...document.querySelectorAll('.ctl-v')],rng=[...document.querySelectorAll('.ctl input[type=range]')];
+  const show=el=>{const v=PROY[el.dataset.k],f=el.dataset.f;el.value=f==='cop'?cop(v):f==='pct'?String(v).replace('.',',')+'%':f==='x'?String(v).replace('.',',')+'x':Math.round(v).toLocaleString('es-CO')};
+  const sync=k=>{vals.forEach(e=>e.dataset.k===k&&document.activeElement!==e&&show(e));rng.forEach(r=>{if(r.dataset.k===k)r.value=PROY[k]})};
+  rng.forEach(r=>{r.value=PROY[r.dataset.k];r.addEventListener('input',()=>{PROY[r.dataset.k]=+r.value;sync(r.dataset.k);calc()})});
+  vals.forEach(el=>{show(el);el.addEventListener('focus',()=>{el.value=String(PROY[el.dataset.k]).replace('.',',');el.select()});
+    el.addEventListener('input',()=>{const v=parseFloat(el.value.replace(/[^0-9,]/g,'').replace(',','.'));if(isFinite(v)){PROY[el.dataset.k]=v;sync(el.dataset.k);calc()}});
+    el.addEventListener('blur',()=>show(el));el.addEventListener('keydown',e=>{if(e.key==='Enter')el.blur()})});
+  function mes(f,P){ // un mes con el canal; f = índice de la rampa (o null = ritmo base)
+    const kP=f==null?1:RAMPA.ingresoPauta[f],kG=f==null?1:RAMPA.gastoPauta[f],kR=f==null?1:RAMPA.recurrencia[f];
+    const ventasHoy=P.ticket?P.fact/P.ticket:0,libre=Math.max(0,P.cap-ventasHoy),plan=P.ticket?P.pauta*P.roas*kP/P.ticket:0,v=Math.min(plan,libre);
+    const fPauta=v*P.ticket,fRec=P.base*P.react/100*P.trec*kR,atrib=fPauta+fRec,com=Math.max(0,atrib-PRECIO.umbral)*PRECIO.pct,c=P.costo/100;
+    const tot=P.fact+atrib,gasto=P.pauta*kG,u=tot*(1-c)-P.fijos-gasto-PRECIO.fee-com-PRECIO.crm;
+    return {fPauta,fRec,tot,c,gasto,com,u,over:plan>libre,usados:ventasHoy+v}}
+  function calc(){const P=PROY,c=P.costo/100,uHoy=P.fact*(1-c)-P.fijos,B=mes(null,P);
+    const r=(t,a,b,cl='',sw='')=>{const d=(typeof a==='number'&&typeof b==='number')?b-a:null;
+      return `<div class="r ${cl}"><span>${sw}${t}</span><b>${typeof a==='number'?cop(a):a}</b><b>${typeof b==='number'?cop(b):b}</b><b class="${d==null?'':d>0?'up':d<0?'dn':''}">${d==null?'':(d>0?'+':'')+cop(d)}</b></div>`};
+    const sw=v=>`<i class="sw" style="background:var(--${v})"></i>`;
+    $('pjPL').innerHTML=`<div class="r h"><span>Al mes (desde el mes 3)</span><b>Hoy</b><b>Con los 2 canales</b><b>Diferencia</b></div>`
+      +r('Facturación de hoy',P.fact,P.fact,'',sw('s1'))+r('+ Canal 1 · Pauta directa',0,B.fPauta,'',sw('s3'))+r('+ Canal 2 · Recurrencia',0,B.fRec,'',sw('s2'))
+      +r('− Costo del producto ('+P.costo+'%)',-P.fact*c,-B.tot*c)+r('− Costos fijos (los mismos)',-P.fijos,-P.fijos)+r('− Pauta (a Meta)',0,-B.gasto)
+      +r('− Growth Partner (fee + 10% sobre $20M)',0,-(PRECIO.fee+B.com))+r('− CRM, IA y WhatsApp',0,-PRECIO.crm)+r('= Te queda al mes',uHoy,B.u,'t');
+    const d=B.u-uHoy,dl=$('pjDelta');dl.classList.toggle('neg',d<0);
+    dl.textContent=d>=0?`+${cop(d)} más al mes para ti después de pagar todo · ${cop(d*12)} en un año`:`Con estos números no da (${cop(d)} al mes): revisamos ticket, margen o capacidad antes de proponerte nada.`;
+    // gráfica
+    const cols=[{l:'Hoy',s:'',fp:0,fr:0,tot:P.fact,u:uHoy}].concat([0,1,2,3,4,5].map(k=>{const m=mes(k,P);return {l:'Mes '+(k+1),s:['construcción','aprendizaje','ritmo base','','',''][k],fp:m.fPauta,fr:m.fRec,tot:m.tot,u:m.u,g:m.gasto,com:m.com}}));
+    const max=Math.max(...cols.map(c=>c.tot))*1.12||1,H=$('pjBars').clientHeight-18;
+    $('pjBars').innerHTML=cols.map((c,k)=>`<div class="bcol" data-i="${k}"><span class="tv">${M(c.tot)}</span><div class="bstack">
+      <div style="height:${P.fact/max*H}px;background:var(--s1)"></div><div style="height:${c.fr/max*H}px;background:var(--s2)"></div><div style="height:${c.fp/max*H}px;background:var(--s3)"></div></div></div>`).join('')
+      +'';
+    let xl=$('pjXl');if(!xl){xl=document.createElement('div');xl.className='xl';xl.id='pjXl';$('pjBars').after(xl)}
+    xl.innerHTML=cols.map((c,k)=>`<div><b>${c.l}</b><em>${c.s||'&nbsp;'}</em><div class="${k&&c.u>uHoy?'gain':''}">Te queda ${M(c.u)}</div></div>`).join('');
+    const tip=$('pjTip');$('pjBars').querySelectorAll('.bcol').forEach(el=>{el.onmouseenter=()=>{const c=cols[+el.dataset.i],tr=(a,b)=>`<div class="tr"><span>${a}</span><b>${b}</b></div>`;
+      tip.innerHTML=`<b>${c.l}</b>`+tr('Facturación de hoy',cop(P.fact))+tr('Recurrencia',cop(c.fr))+tr('Pauta directa',cop(c.fp))+tr('Total',cop(c.tot))+tr('Te queda',cop(c.u));
+      const pr=el.closest('.pchart').getBoundingClientRect(),er=el.getBoundingClientRect();tip.style.left=Math.min(pr.width-215,Math.max(0,er.left-pr.left-60))+'px';tip.style.top='34px';tip.style.opacity=1};
+      el.onmouseleave=()=>tip.style.opacity=0});
+    $('pjCapNote').textContent=(B.over?'⚠ La pauta traería más pacientes de los que tu clínica atiende hoy: la proyección se corta en tu capacidad ('+P.cap+' al mes). Para crecer más hace falta agenda o equipo. ':'Capacidad usada desde el mes 3: '+Math.round(B.usados)+' de '+P.cap+' procedimientos. ')+'La recurrencia no usa pauta: son pacientes que ya te conocen.'}
+  window.projCalc=calc;calc();
 })();
 
 /* ===================== CUPOS + PREGUNTA ===================== */
@@ -1234,7 +1255,7 @@ window.on3D=slide=>{const h=host(slide);if(!h){active=null;running=false;return}
   let sc=built.get(h);if(!sc){sc=BUILD[h.dataset.scene](h);built.set(h,sc)}
   active={host:h,sc};h.prepend(renderer.domElement);size();if(!running){running=true;last=performance.now();requestAnimationFrame(loop)}};
 window.on3DTheme=()=>{};
-addEventListener('resize',size);
+addEventListener('resize',()=>{size();if(window.projCalc)window.projCalc()});
 // pre-construir el flujo para que sus controles funcionen desde el primer clic
 const fh=document.querySelector('[data-scene="flow"]');built.set(fh,sceneFlow(fh));
 document.querySelectorAll('#fsteps button').forEach(b=>b.onclick=()=>window.flowCtl.jump(+b.dataset.s));
