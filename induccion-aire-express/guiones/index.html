@@ -281,10 +281,89 @@ de anticipo o de financiamiento.</p></section><section id="s01" class="card"><p 
 Si el lead aceptó mensajes, el sistema le manda sus SMS de seguimiento (T1, T3, T5); tú no le escribes a mano.</p>
 <hr />
 <h2>TRACK A — El lead ya dijo qué necesita (página o formulario)</h2>
-<p>Antes de marcar, mira en la app: <strong>proyecto, detalle, plazo, urgencia, ciudad y mensaje</strong>.</p>
+<p>Antes de marcar, mira en la app lo que el cliente ya respondió. <strong>Lo que ya respondió no se vuelve a preguntar.</strong></p>
+<p><strong>Dónde lo ves (computador):</strong> abre el contacto → columna izquierda <strong>Contact Details</strong> → pestaña <strong>All fields</strong> → abre la carpeta
+<strong>Additional Info</strong> (está al final, debajo de <em>General Info</em>). <strong>Celular:</strong> Conversations → el chat → <em>Tap to view Contact info</em> →
+pestaña <strong>Details</strong>. Arriba de la ficha también ves la etiqueta de dónde llegó: <code>origen-formulario-meta</code> (formulario de Facebook/Instagram)
+o <code>origen-sitio</code> (página web).</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Campo en la app</th>
+<th>Qué te dice</th>
+<th>De dónde viene</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>servicio</code></td>
+<td>Qué pidió (ej. <em>Furnace replacement</em>, <em>New furnace</em>, <em>Repair</em>)</td>
+<td>Formulario y página</td>
+</tr>
+<tr>
+<td><code>emergencia</code></td>
+<td><code>yes</code> = sin calefacción o sin aire <strong>ahora</strong> → Regla de urgencia (abajo)</td>
+<td>Formulario y página</td>
+</tr>
+<tr>
+<td><code>pisos_casa</code></td>
+<td>Pisos de la casa (1, 2, 3+)</td>
+<td>Formulario</td>
+</tr>
+<tr>
+<td><code>basement</code></td>
+<td>Si tiene basement y si está terminado (habitable)</td>
+<td>Formulario</td>
+</tr>
+<tr>
+<td><code>chimenea</code></td>
+<td>Si tiene chimenea (Yes / No / Not sure)</td>
+<td>Formulario</td>
+</tr>
+<tr>
+<td><code>edad_furnace</code></td>
+<td>Años del furnace actual (si ya lo dijo)</td>
+<td>Llamada / página</td>
+</tr>
+<tr>
+<td><code>proyecto</code>, <code>proyecto_detalle</code>, <code>plazo</code></td>
+<td>Qué quiere hacer, el detalle y para cuándo</td>
+<td>Página</td>
+</tr>
+<tr>
+<td><code>mensaje_lead</code></td>
+<td>El mensaje que escribió</td>
+<td>Página</td>
+</tr>
+<tr>
+<td>Contact source = <em>Facebook</em></td>
+<td>Llegó por el formulario de Meta</td>
+<td>Formulario</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Lead del formulario de Meta (etiqueta <code>origen-formulario-meta</code>):</strong> ya trae 3 de los 4 datos del reemplazo (pisos, basement y
+chimenea). Si <code>servicio</code> dice <em>Furnace replacement</em>, en la llamada <strong>solo confirmas</strong> esos 3 y preguntas lo que falta: <strong>si es de gas,
+cuántos años tiene, si el basement es habitable</strong> (si no lo dijo) <strong>y la dirección</strong>. Si <code>emergencia</code> = <code>yes</code>, se llama de inmediato
+(Regla de urgencia).</p>
+<pre><code>&quot;Hi [Name], this is [your name] from Aire Express. You filled out our form about replacing your furnace — I have your answers here:
+a [2]-story home, [with an unfinished basement], and [a chimney]. Is that right?&quot;
+(Hola [nombre], soy [tu nombre] de Aire Express. Llenaste nuestro formulario para cambiar tu furnace y tengo tus respuestas: casa de
+[2] pisos, [con basement sin terminar] y [con chimenea]. ¿Es correcto?)
+
+&quot;You also told us your heat is out right now — is anyone at home without heat? We'll move fast on this.&quot;   ← solo si emergencia = yes
+(También nos dijiste que te quedaste sin calefacción. ¿Hay alguien en la casa sin calefacción? Vamos a moverlo rápido.)
+
+&quot;Just two more things so Juan David can give you your exact price: is it a gas furnace, and about how old is the one you have now?&quot;
+(Solo dos cosas más para que Juan David te dé el precio exacto: ¿es de gas y cuántos años tiene el que tienes ahora?)
+
+&quot;And what's the address where the furnace is?&quot;   (¿Y cuál es la dirección donde está el furnace?)
+</code></pre>
+<p>Si <code>chimenea</code> = <em>Not sure</em>: "No worries — is there a chimney or a vent pipe that goes up through the roof?" (¿Hay chimenea o un tubo que
+sale por el techo?). Después sigue igual que abajo: "Juan David, our installer, will review this and we'll call you back…".</p>
 <p><strong>Furnace — REEMPLAZO (ya tiene un furnace y lo quiere cambiar) — se cotiza por teléfono (Juan David, 15-oct):</strong>
 Si es <strong>instalación nueva</strong> (la casa no tiene furnace), no uses este bloque: ve a "Furnace — INSTALACIÓN NUEVA" más abajo.
-Antes de marcar, mira si el lead ya trae los datos de la casa (el formulario de Meta pregunta pisos, basement y chimenea). Lo que ya respondió <strong>no se vuelve a preguntar</strong>.</p>
+Si el lead viene del <strong>formulario de Meta</strong>, usa el bloque de arriba (ya trae pisos, basement y chimenea). Si viene de la página o de una llamada, usa este:</p>
 <pre><code>&quot;Hi [Name], this is [your name] from Aire Express. You asked about replacing your furnace at your home in [City]. Is this a good time?&quot;
 (Hola [nombre], soy [tu nombre] de Aire Express. Pediste cambiar tu furnace en tu casa en [ciudad]. ¿Es buen momento?)
 
