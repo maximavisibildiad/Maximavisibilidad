@@ -428,18 +428,29 @@ with a 5-year warranty and the first 3 months parts and labor free. I can schedu
 (Hola [nombre], soy [tu nombre] de Aire Express. Juan David revisó tus fotos. Tu precio exacto es $[precio], instalado en más o menos un día,
 con 5 años de garantía y 3 meses gratis. Te puedo agendar la instalación el [día] o el [día]. ¿Cuál te sirve?)
 
-&quot;Great. I'm sending you the contract to [email]. Once it's signed, your installation day is confirmed.&quot;
-(Listo. Te mando el contrato a [correo]. Apenas lo firmes, queda confirmado el día de la instalación.)
+&quot;Great. I'll text you the contract right now so you can sign it from your phone. Is it OK to text you at this number?&quot;
+(Listo. Te mando el contrato por mensaje de texto ahora para que lo firmes desde el celular. ¿Te lo puedo mandar a este número?)
+
+&quot;Once it's signed, your installation day is confirmed.&quot;   (Apenas lo firmes, queda confirmado el día de la instalación.)
 </code></pre>
-<ul>
-<li><strong>El contrato se manda en esta llamada</strong> (link de GHL al correo) para que lo firme antes del día de instalación: así Juan David
-  sabe que la venta es en firme antes de cargar el furnace. Si no lo puede firmar en el celular: por correo, o en papel en la casa
-  <strong>antes de empezar el trabajo</strong>. Nunca se empieza a trabajar sin contrato firmado (Juan David, 19-oct).</li>
-<li>La instalación va al calendario como <strong>"INSTALACIÓN furnace — [nombre]"</strong>, con dirección completa, y la oportunidad pasa a
-  <strong>Proposal Sent</strong> con el valor.</li>
-<li>Si duda o pide verlo en persona: "Of course — the visit is free. [1] or [2]?" y se agenda la visita como siempre.</li>
-<li>Las objeciones de precio en esta llamada se responden con la tabla de la Inducción (2.2) y terminan en los 2 días de instalación.</li>
-</ul>
+<p><strong>Cómo sale el contrato (automático, no lo escribes tú):</strong> solo si dijo que sí al texto, en el contacto (Additional Info) llenas:
+| Campo | Qué pones |
+|---|---|
+| <code>contrato_equipo</code> | Lo que dijo Juan David en el grupo, en inglés. Ej.: <em>Goodman natural-gas furnace, 80,000 BTU/h, 80% AFUE</em> |
+| <code>contrato_precio</code> | El precio exacto de Juan David (solo el número, ej. 2350) |
+| <code>contrato_forma_pago</code> | <em>Pay in full when the job is done</em> (vive en la casa) o <em>Deposit before installation, balance when the job is done</em> (renta o inversión) |
+| <code>contrato_anticipo</code> | <strong>0</strong> si paga al terminar; si es renta o inversión, el monto que diga Juan David |
+| <code>contrato_fecha_instalacion</code> | El día que escogió |</p>
+<p>Después mueves la oportunidad a <strong>Proposal Sent</strong> con el valor. El sistema le manda el contrato por texto para firmar, y Juan
+David lo contrafirma. Si falta uno de los 3 primeros campos o el anticipo, <strong>no sale</strong>: revisa que estén todos.
+- Si no acepta mensajes de texto: pide el correo y avisa en el grupo; el contrato se manda a mano por correo desde GHL
+  (Documents &amp; Contracts → plantilla "Contrato - Reemplazo de furnace (venta directa)").
+- El contrato se firma <strong>antes del día de instalación</strong>: así Juan David sabe que la venta es en firme antes de cargar el furnace.
+  Si no lo puede firmar en el celular: en papel en la casa <strong>antes de empezar el trabajo</strong>. Nunca se empieza a trabajar sin
+  contrato firmado (Juan David, 19-oct).
+- La instalación va al calendario como <strong>"INSTALACIÓN furnace — [nombre]"</strong>, con dirección completa.
+- Si duda o pide verlo en persona: "Of course — the visit is free. [1] or [2]?" y se agenda la visita como siempre.
+- Las objeciones de precio en esta llamada se responden con la tabla de la Inducción (2.2) y terminan en los 2 días de instalación.</p>
 <p><strong>Furnace — INSTALACIÓN NUEVA (la casa no tiene furnace):</strong> necesita visita, porque hay que ver ductos y ventilación.</p>
 <pre><code>&quot;Hi [Name], this is [your name] from Aire Express. You asked about installing a new furnace in your home in [City]. Is this a good time?&quot;
 (Hola [nombre], soy [tu nombre] de Aire Express. Pediste instalar un furnace nuevo en tu casa en [ciudad]. ¿Es buen momento?)
