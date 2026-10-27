@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ruta del lead en GHL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Mismo formato de la página "Ruta del lead" de Diana; cada paso muestra lo visto en GHL y la pregunta numerada */
+:root{
+  --bg:#f4f6f8; --surface:#ffffff; --sunk:#e9edf1; --fg:#17212b; --muted:#5b6875; --line:#d5dce3;
+  --accent:#0f6e74; --accent-soft:#d8eeee; --on-accent:#ffffff;
+  --sms:#2f5fd0; --sms-soft:#e3eafb; --call:#1d7a46; --call-soft:#dcf1e4;
+  --mail:#7a4fb5; --mail-soft:#eee6f8; --act:#a86400; --act-soft:#fbecd2;
+  --end:#b23b3b; --end-soft:#f7e1e1; --q:#8a5a00; --q-soft:#fff4dc; --q-line:#efd49a;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Public Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0f151b; --surface:#16202a; --sunk:#1d2935; --fg:#e4eaf0; --muted:#97a5b3; --line:#2a3846;
+  --accent:#4cc2c4; --accent-soft:#163a3d; --on-accent:#0f151b;
+  --sms:#86a8ff; --sms-soft:#1d2a4a; --call:#5fd394; --call-soft:#173a29;
+  --mail:#c3a3f2; --mail-soft:#2c2342; --act:#f0b25a; --act-soft:#3d2c12;
+  --end:#f08a8a; --end-soft:#3d1d1d; --q:#f3c46b; --q-soft:#33280f; --q-line:#5a4618; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0f151b; --surface:#16202a; --sunk:#1d2935; --fg:#e4eaf0; --muted:#97a5b3; --line:#2a3846;
+  --accent:#4cc2c4; --accent-soft:#163a3d; --on-accent:#0f151b;
+  --sms:#86a8ff; --sms-soft:#1d2a4a; --call:#5fd394; --call-soft:#173a29;
+  --mail:#c3a3f2; --mail-soft:#2c2342; --act:#f0b25a; --act-soft:#3d2c12;
+  --end:#f08a8a; --end-soft:#3d1d1d; --q:#f3c46b; --q-soft:#33280f; --q-line:#5a4618; color-scheme:dark }
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--body);margin:0}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px;display:grid;gap:20px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.1}
+h2{font-size:20px}
+p{margin:0}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--muted);max-width:62ch}
+.pick{display:flex;flex-wrap:wrap;gap:8px}
+.sp{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--fg);font:500 13.5px var(--body);padding:8px 12px;border-radius:8px;cursor:pointer}
+.sp[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
+.sp:focus-visible,summary:focus-visible,.tog:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.sum{font-size:14px;color:var(--muted)}
+.tog{appearance:none;border:0;background:none;color:var(--accent);font:600 13.5px var(--body);cursor:pointer;padding:4px 0}
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
+.tl::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.day{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:18px 0 8px 44px}
+.day:first-child{padding-top:4px}
+.step{display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;padding:5px 0;position:relative}
+.dot{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font:600 11px var(--mono);z-index:1;border:2px solid var(--bg)}
+.dot.sms{background:var(--sms-soft);color:var(--sms)} .dot.call{background:var(--call-soft);color:var(--call)}
+.dot.mail{background:var(--mail-soft);color:var(--mail)} .dot.act{background:var(--act-soft);color:var(--act)}
+.dot.end{background:var(--end-soft);color:var(--end)} .dot.win{background:var(--call);color:var(--on-accent)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:10px;min-width:0}
+summary{list-style:none;cursor:pointer;padding:10px 14px;display:grid;gap:2px}
+summary::-webkit-details-marker{display:none}
+.when{font:500 12px var(--mono);color:var(--accent);font-variant-numeric:tabular-nums}
+.what{font-weight:600}
+.what::after{content:" +";color:var(--muted);font-weight:400}
+details[open] .what::after{content:" −"}
+.what.plain::after{content:""}
+.qtag{display:inline-block;margin-left:6px;font:600 11px var(--mono);color:var(--q);background:var(--q-soft);border:1px solid var(--q-line);border-radius:6px;padding:1px 6px;vertical-align:1px}
+.body{padding:0 14px 12px;display:grid;gap:8px}
+.bubble{background:var(--sunk);border-radius:14px;border-bottom-left-radius:4px;padding:9px 12px;font-size:14px;max-width:52ch;overflow-wrap:anywhere}
+.bubble.mine{background:var(--accent);color:var(--on-accent);border-radius:14px;border-bottom-right-radius:4px;justify-self:end}
+.note{font-size:13.5px;color:var(--muted)}
+.wf{font:500 12px var(--mono);color:var(--muted)}
+.q{background:var(--q-soft);border:1px solid var(--q-line);border-radius:10px;padding:9px 12px;font-size:14px}
+.q b{color:var(--q);font-family:var(--mono);font-size:12.5px;margin-right:4px}
+.rules{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:grid;gap:10px}
+.rules ul,.rules ol{margin:0;padding-left:20px;display:grid;gap:8px}
+.rules li b{font-family:var(--mono);font-size:12.5px;color:var(--q)}
+.qbox{border-color:var(--q-line);background:var(--q-soft)}
+.rules .qlist{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.qlist li{background:var(--surface);border:1px solid var(--q-line);border-radius:10px;padding:10px 12px;display:grid;gap:6px}
+.qlist li b{font:600 12.5px var(--mono);color:var(--q)}
+.go{appearance:none;justify-self:start;border:0;background:none;color:var(--accent);font:600 13px var(--body);cursor:pointer;padding:2px 0}
+.go:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.step.hasq details{border-color:var(--q-line)}
+.step.flash details{box-shadow:0 0 0 3px var(--q-line)}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted);align-items:center}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+@media (prefers-reduced-motion:no-preference){ details[open] .body{animation:in .2s ease-out} @keyframes in{from{opacity:.3;transform:translateY(-3px)}to{opacity:1;transform:none}} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header style="display:grid;gap:8px">
+    <span class="eyebrow">Mastery Aesthetics · cómo quedó en GHL</span>
+    <h1>Ruta del lead, según lo construido</h1>
+    <p class="lede">Diana, esta página usa tu mismo formato y muestra lo que vimos en los workflows de "aesthetics / opc dco" el 27 de octubre, sin modificar nada. Es nuestra lectura, así que puede haber algo que no entendimos bien. Basta con responder cada pregunta por su número.</p>
+    <p class="note">Nombres y fechas de ejemplo: Laura, de Sonrisa Dental Miami. El Día 0 es un lunes y el formulario entra a las 9:00 a. m., hora del lead.</p>
+  </header>
+
+  <section class="rules qbox">
+    <h2>4 preguntas antes de encender la pauta</h2>
+    <p class="note">Todo lo demás lo vemos claro. Estas cuatro afectan el camino de la cita; cada una te lleva al paso donde la vimos.</p>
+    <ol id="qall" class="qlist"></ol>
+  </section>
+
+  <h2 style="margin-top:8px">El recorrido completo</h2>
+  <div class="pick" id="pick" role="group" aria-label="Elegir camino"></div>
+  <div class="bar"><p class="sum" id="sum"></p><button class="tog" id="tog" type="button">Abrir todos</button></div>
+  <ol class="tl" id="tl"></ol>
+
+  <div class="legend" aria-label="Leyenda">
+    <span><i style="background:var(--sms)"></i>SMS</span>
+    <span><i style="background:var(--call)"></i>Llamada o aviso a Juan</span>
+    <span><i style="background:var(--mail)"></i>Correo</span>
+    <span><i style="background:var(--act)"></i>Lo que hace el lead o Juan</span>
+    <span><i style="background:var(--end)"></i>Fin del contacto</span>
+  </div>
+
+  <section class="rules">
+    <h2>Configuración que vimos en "lead nuevo"</h2>
+    <ul>
+      <li>Entra por el formulario "Form dco" o por un contacto nuevo con la etiqueta "carga manual". El formulario de Meta entra por el workflow "lead form meta x webhook", que lo agrega a "lead nuevo".</li>
+      <li>Ventana de envío: lunes a viernes, de 9:00 a. m. a 5:00 p. m., en la zona horaria del contacto.</li>
+      <li>"Stop on response" encendido: si el lead responde un mensaje, sale de la secuencia.</li>
+      <li>"Allow re-entry" apagado.</li>
+      <li>Número de envío: +1 551 319 1344. Correos desde "Soporte - Mastery Aesthetics" &lt;support@masteryaesthetics.com&gt;.</li>
+      <li>Las llamadas son manuales: los 6 "intentos" son avisos a Juan con los datos del lead para que llame.</li>
+    </ul>
+  </section>
+</div>
+
+<script>
+const ICON={sms:"SMS",call:"TEL",mail:"@",act:"YO",end:"FIN",win:"✓"};
+
+const Q={
+ P1:"\"el cliente respondió mensajería\" se activa solo con respuestas del canal \"GMB messaging\" (filtro Reply channel). Cuando el lead responde por SMS \"SI\" para confirmar la cita, o \"STOP\", ¿entra a ese workflow?",
+ P2:"En \"lead agendado\", la revisión de la etiqueta rsi va justo después del SMS que pide \"Responde SÍ para confirmar\", sin espera. Como el lead todavía no ha respondido en ese segundo, ¿termina por \"None\" y ya no le llegan la tarea de confirmar ni el SMS de 15 minutos antes?",
+ P3:"En \"lead agendado\", dos SMS tienen como texto \"32130.0321321\": el que sale después de confirmar y el de 15 minutos antes de la cita. ¿Qué texto van a llevar? (el de 15 minutos antes, con el enlace de Google Meet)",
+ P4:"Si el lead no se conecta a la videollamada, hoy queda la tarea \"marcar si asistió\" para Juan. ¿Qué se dispara después para reagendarlo?"
+};
+
+// [día, cuándo, tipo, qué pasa, detalle: [["msg"|"mine"|"note"|"wf", texto]], preguntas]
+const P=[
+{id:"silencio",name:"No responde nada",sum:"Con permiso de SMS y facturación de $10K o más. 6 avisos de llamada a Juan, 6 SMS y 4 correos en 6 días hábiles.",s:[
+ ["Día 0 · lunes","9:00 a. m.","act","Llena el formulario en masteryaesthetics.com",[["wf","lead nuevo · activador: Form submitted \"Form dco\""],["note","Marca las dos casillas. Pasa la condición \"Si mkt\" y \"Si info\" con valor, y la de facturación 10k_25k, 25k_50k o as_50k."]],[]],
+ ["Día 0 · lunes","Al instante","sms","Recibe la confirmación de suscripción",[["msg","Te inscribiste para recibir mensajes de mastery aesthetics."],["wf","lead nuevo · SMS \"suscripcion a SMS\""],["note","Antes: etiqueta y oportunidad creada o actualizada."]],[]],
+ ["Día 0 · lunes","Al instante","sms","Recibe el primer SMS",[["msg","Hola Laura López, soy la asistente de Mastery Aesthetics. Recibimos la solicitud de Sonrisa Dental Miami. Revisaremos tu caso en especial durante el diagnóstico gratis de 30 min. ¿Eres tú quien toma las decisiones de la clínica? Responde STOP para salir."],["wf","lead nuevo · SMS \"mensaje 1 SMS\""]],[]],
+ ["Día 0 · lunes","Al instante","mail","Verificación del email y correo de bienvenida",[["wf","lead nuevo · \"Email verification\" + Email \"Correo electrónico\" (plantilla de Mastery)"]],[]],
+ ["Día 0 · lunes","Al instante","call","Juan llama (manual) con el aviso \"intento 1 de 6\" y la tarea de llamar en 30 minutos",[["note","Notificación \"REVISAR PERSONALMENTE - CALIFICA\" con nombre, email, teléfono, facturación, clínica y especialidad. Tarea \"Laura López LLAMAR EN 30'\"."],["wf","lead nuevo · Internal notification + Add task"]],[]],
+ ["Día 0 · lunes","9:00 a. m.","act","El sistema elige la franja horaria",[["note","Condición por hora del día: 8-10, 10-11, 11-13, 13-14, 14-15, 15-16 y 16-17. Cada franja tiene sus esperas y se une a la secuencia común con \"Go to\". \"None\" termina."]],[]],
+ ["Día 0 · lunes","+150 min (11:30 a. m.)","sms","Recibe un recordatorio corto",[["msg","Laura, ¿alcanzaste a ver mi mensaje? El diagnóstico gratis de 30 min para Sonrisa Dental Miami sigue disponible. ¿Te queda mejor en la mañana o en la tarde? Responde STOP para salir."],["wf","lead nuevo · SMS \"mensaje 2 ok\""]],[]],
+ ["Día 0 · lunes","+150 min (2:00 p. m.)","call","Juan llama (manual) con el aviso \"intento 2 de 6\"",[["note","La espera se llama \"Wait hasta 3 pm del mismo día\" y está configurada en 150 minutos."]],[]],
+ ["Día 1 · martes","+19 h (9:00 a. m.)","call","Juan llama (manual) con el aviso \"intento 3 de 6\"",[],[]],
+ ["Día 1 · martes","Enseguida","sms","Le ofrecen agendar por mensaje",[["msg","Laura, ¿te queda más fácil por aquí? Dime qué día de esta semana te sirve y te dejo agendado el diagnóstico de 30 min de Sonrisa Dental Miami. Responde STOP para salir."],["wf","lead nuevo · SMS \"ofrece agendar por mensaje ok\""]],[]],
+ ["Día 2 · miércoles","+24 h","call","Juan llama (manual) con el aviso \"intento 4 de 6\"",[],[]],
+ ["Día 2 · miércoles","Enseguida","mail","Recibe un correo",[["wf","lead nuevo · Email \"intento 4 de 6 email ok\" (asunto vacío)"]],[]],
+ ["Día 3 · jueves","+24 h","sms","Recibe un caso de éxito",[["msg","Laura López, Juan Pablo Mesa llevó una operación en EE.UU. de $6,500 en anuncios a $100,000 facturados. En el diagnóstico vemos qué parte de eso aplica a Sonrisa Dental Miami. ¿Lo agendamos? Responde STOP para salir."],["wf","lead nuevo · SMS \"caso de exito ok\""]],[]],
+ ["Día 4 · viernes","+24 h","call","Juan llama (manual) con el aviso \"intento 5 de 6\"",[],[]],
+ ["Día 4 · viernes","Enseguida","mail","Recibe el correo del caso de éxito",[["note","Asunto: \"Mastery recordatorio\". Vista previa: \"De $6,500 en anuncios a $100,000 facturados\"."]],[]],
+ ["Día 5 → lunes","+24 h, siguiente día hábil","call","Juan llama (manual) con el aviso \"intento 6 de 6\"",[],[]],
+ ["Día 5 → lunes","Enseguida","mail","Recibe el último correo",[["note","Asunto: \"Último correo de nuestra parte\"."]],[]],
+ ["Día 5 → lunes","Enseguida","sms","Recibe el último SMS",[["msg","Laura López, último mensaje de mi parte. Si más adelante quieres revisar el crecimiento de Sonrisa Dental Miami, responde a este número y te agendamos. Responde STOP para salir."]],[]],
+ ["Día 5 → lunes","Enseguida","act","Juan recibe la tarea \"formulario de control final\"",[["note","\"Hola Juan, por favor recuerda llenar el formulario de control\", con el enlace al formulario."]],[]],
+ ["Día 5","—","end","Termina la secuencia",[],[]]
+]},
+{id:"responde",name:"Responde y agenda",sum:"Responde un SMS, sale de la secuencia y agenda en el calendario.",s:[
+ ["Día 0 · lunes","9:00 a. m.","act","Llena el formulario y recibe los primeros mensajes",[["note","Igual que en \"No responde nada\" hasta el primer SMS."]],[]],
+ ["Día 0 · lunes","13 min después","act","Responde el SMS",[["mine","Sí, soy la dueña. ¿De qué se trata?"],["note","\"Stop on response\": sale de \"lead nuevo\"."]],[]],
+ ["Día 0 · lunes","Al responder","act","Sigue la conversación",[["wf","asistente ia jp · activador Conversation AI \"Chat initiated\" → oportunidad CONVERSANDO → si \"Si mkt\" y \"Si info\" tienen valor: Continue conversation"],["note","Si no tiene las casillas, le avisa a Juan. La conversación la sigue el setter o Juan."]],[]],
+ ["Día 0 · lunes","Al agendar","act","Agenda la cita",[["wf","lead agendado · activador \"Customer booked appointment\" (contacto) → oportunidad AGENDADO"]],[]],
+ ["Día 0 · lunes","Al instante","call","Juan llama (manual) con el aviso \"CITA AGENDADA\"",[["note","Con nombre, email, teléfono, clínica, facturación y fecha y hora de la cita."]],[]],
+ ["Día 0 · lunes","Al instante","mail","Recibe el correo de confirmación",[["note","Asunto: \"definir con juanp\"."]],[]],
+ ["Día 0 · lunes","Al instante","sms","Recibe el SMS de confirmación",[["msg","Listo, Laura López: tu diagnóstico de 30 min quedó el [fecha] a las [hora] (hora del Este). Te llega el enlace de Google Meet por aquí y por correo. Responde STOP para salir."]],[]],
+ ["3 días antes","Antes de la cita","sms","Recibe un recordatorio",[["msg","Laura López, te recuerdo tu diagnóstico de Sonrisa Dental Miami el [fecha] a las [hora] (ET). Si necesitas moverlo, responde aquí. Responde STOP para salir."]],[]],
+ ["1 día antes","Antes de la cita","sms","Le piden confirmar",[["msg","Laura López, mañana a las [hora] (ET) es tu diagnóstico con Mastery Aesthetics. Responde SÍ para confirmar, o escríbeme si necesitas moverlo. Responde STOP para salir."],["note","Juan llama (manual) con el aviso \"lead agendado para meet\" y el lead recibe el correo \"Mastery recordatorio\" con el enlace de la videollamada."]],[]],
+ ["1 día antes","Enseguida","act","\"lead agendado\" revisa las etiquetas",[["note","Justo después del correo de recordatorio: rsi sigue; rno o ninguna termina (END)."]],["P2"]],
+ ["1 día antes","Responde","act","Confirma",[["mine","SI"],["wf","el cliente respondió mensajería · \"contiene SI\" → etiqueta rsi"]],["P1"]],
+ ["1 día antes","Rama rsi, +6 h","act","Juan recibe la tarea \"confirmar por llamada (ese día)\"",[],[]],
+ ["1 día antes","Enseguida","sms","Recibe un SMS",[["msg","32130.0321321"]],["P3"]],
+ ["Día de la cita","Enseguida","act","Juan recibe la tarea \"LLAMAR YA\"",[],[]],
+ ["Día de la cita","15 min antes","sms","Recibe un SMS",[["msg","32130.0321321"]],["P3"]],
+ ["Día de la cita","A la hora","act","Diagnóstico de 30 min por videollamada",[],[]],
+ ["Día de la cita","1 h después","act","Juan recibe la tarea \"marcar si asistió\"",[],["P4"]]
+]},
+{id:"llamada",name:"Juan la llama y contesta",sum:"Juan llena el formulario de control y eso mueve el sistema.",s:[
+ ["Cualquier día","Al colgar","act","Juan llena el formulario de control",[["note","Formulario \"backend juap\": EMAIL DEL LEAD, \"resultado de la llamada juanp\" y Observaciones. Si no contesta, la llamada solo queda en el contador."],["wf","contesto llamada · activador Form submitted \"backend juap\" → oportunidad GESTIÓN HUMANA → Remove from workflow \"lead nuevo\""]],[]],
+ ["Cualquier día","Cada llamada saliente","act","Se suma 1 al contador",[["wf","contador de llamadas · Call details (saliente; ocupado, cancelada, no contestó, completada…) → Math operation CONTADOR-LLAMADAS + 1"]],[]],
+ ["Opción","enviar contrato","mail","Recibe el contrato por correo",[["wf","Send documents & contracts · de Juan Pablo Mesa · plantilla \"plantilla provisional\" · envío directo por email → oportunidad EN CIERRE → Meta Conversion API: InitiateCheckout"]],[]],
+ ["Opción","no le interesa","end","Se cierra la oportunidad",[["wf","contesto llamada · se actualiza la oportunidad (no alcanzamos a leer la etapa) → END"]],[]],
+ ["Opción","sigue en conversación telefónica","end","Termina el workflow",[["wf","contesto llamada → END"]],[]],
+ ["Opción","agendó meet","act","Se actualiza la oportunidad",[["note","La cita la recibe \"lead agendado\" cuando se reserva en el calendario."]],[]]
+]},
+{id:"firma",name:"Firma el contrato",sum:"Al firmar se marca como ganado y Juan recibe la tarea de cobrar.",s:[
+ ["Día X","Al firmar","act","Firma el contrato",[["wf","contrato firmado · activador Documents & Contracts, estado signed/accepted"]],[]],
+ ["Día X","Al instante","call","Juan llama (manual) con el aviso de contrato firmado",[["note","\"Cobrar el primer mes y confirmar el pago\", con nombre, teléfono y email."]],[]],
+ ["Día X","Al instante","act","Oportunidad en GANADO y tarea de cobro para Juan",[["wf","Meta Conversion API: CompleteRegistration"]],[]],
+ ["Día X","—","win","Es cliente",[],[]]
+]},
+{id:"sinsms",name:"Sin permiso para SMS",sum:"Sin las casillas: los mismos avisos de llamada y correos, sin SMS.",s:[
+ ["Día 0 · lunes","9:00 a. m.","act","Llena el formulario sin marcar las casillas",[["note","Entra por la rama \"None\" de la primera condición."]],[]],
+ ["Día 0 · lunes","Al instante","mail","Verificación del email y correo de bienvenida",[],[]],
+ ["Día 0 · lunes","Al instante","call","Juan llama (manual) con el aviso \"intento 1 de 6\" y la tarea de llamar en 30 minutos",[],[]],
+ ["Días 0 a 5","Mismas esperas","call","Juan recibe los avisos 2 a 6",[["note","Mismas franjas y esperas que la rama con SMS."]],[]],
+ ["Días 2, 4 y 5","Con los avisos 4, 5 y 6","mail","Recibe los correos \"intento 4 de 6\", el caso de éxito y el de cierre",[],[]],
+ ["Día 5","Al final","act","Juan recibe la tarea \"formulario de control final\"",[],[]]
+]},
+{id:"meta",name:"Llega por el formulario de Meta",sum:"Entra por la otra subcuenta y el webhook lo pasa a \"lead nuevo\".",s:[
+ ["Día 0","Al enviar","act","Llena el formulario instantáneo de Meta",[["note","El lead entra a la subcuenta \"Mastery Meta TikTok\" y de ahí sale al webhook."]],[]],
+ ["Día 0","Al instante","act","Se crea el contacto en Aesthetics Mastery",[["wf","lead form meta x webhook · Inbound webhook → Crear contacto (empresa, nombre, apellido, teléfono, tipo de clínica, facturación, especialidad) → Actualizar email → oportunidad → etiqueta \"form meta\" → aviso → Add to workflow \"lead nuevo\""]],[]],
+ ["Día 0","Enseguida","act","Sigue en \"lead nuevo\"",[["note","Sigue la rama que corresponda según las casillas y la facturación."]],[]]
+]},
+{id:"nocalifica",name:"Factura menos de $10K",sum:"Confirmación de suscripción, un SMS amable y aviso a Juan.",s:[
+ ["Día 0","9:00 a. m.","act","Llena el formulario con facturación menor a $10K",[],[]],
+ ["Día 0","Al instante","sms","Recibe la confirmación de suscripción",[["msg","Te inscribiste para recibir mensajes de mastery aesthetics."]],[]],
+ ["Día 0","Al instante","sms","Recibe el SMS de \"por ahora no\"",[["msg","Hola Laura, gracias por tu solicitud a Mastery Aesthetics. Hoy nuestro programa está diseñado para clínicas con un volumen de facturación mayor, así que por ahora no es el momento del diagnóstico. Si eso cambia, escríbenos. Responde STOP para salir."]],[]],
+ ["Día 0","Al instante","call","Juan recibe un aviso",[],[]],
+ ["Día 0","—","end","Termina",[],[]]
+]},
+{id:"otra",name:"Especialidad \"Otra\"",sum:"Solo avisos a Juan.",s:[
+ ["Día 0","9:00 a. m.","act","Llena el formulario con especialidad \"Otra\"",[],[]],
+ ["Día 0","Al instante","call","Juan recibe un aviso, una espera y otro aviso",[],[]],
+ ["Día 0","—","end","Termina",[],[]]
+]},
+{id:"stop",name:"Pide que no le escriban",sum:"Sale de \"lead nuevo\", queda en PERDIDO y Juan recibe la tarea.",s:[
+ ["Cualquier día","Al responder","act","Escribe STOP o \"no me escriba\"",[["mine","Por favor no me escriban más"],["wf","el cliente respondió mensajería · \"contiene STOP\" o \"contiene no me escriba\""]],["P1"]],
+ ["Cualquier día","Al instante","end","Sale de \"lead nuevo\" y la oportunidad pasa a PERDIDO",[],[]],
+ ["Cualquier día","Al instante","act","Juan recibe la tarea \"respondio STOP o NO ME ESCRIBA MAS\"",[["note","\"Según el protocolo comercial, queda en tus manos; todas las automatizaciones para este lead se detienen.\" Vence a los 14 días."]],[]]
+]},
+{id:"fuera",name:"Entra fuera de horario",sum:"A las 7:00 p. m. o en fin de semana.",s:[
+ ["Día 0 · sábado","7:00 p. m.","act","Llena el formulario",[],[]],
+ ["Día 0 · sábado","—","act","La ventana lunes a viernes de 9 a 5 retiene las acciones",[["note","Lo que entendemos: los mensajes esperan al lunes a las 9:00 a. m. y ahí se elige la franja."]],[]],
+ ["Lunes","9:00 a. m.","sms","Arranca la secuencia",[["note","Desde aquí, igual que en \"No responde nada\"."]],[]]
+]}
+];
+
+const $=s=>document.querySelector(s);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let cur=P[0];
+$("#pick").innerHTML=P.map(p=>`<button type="button" class="sp" data-id="${p.id}" aria-pressed="false">${esc(p.name)}</button>`).join("");
+document.querySelectorAll(".sp").forEach(b=>b.addEventListener("click",()=>{cur=P.find(p=>p.id===b.dataset.id);draw();try{localStorage.setItem("rl-ghl-path",cur.id)}catch(e){}}));
+try{const s=localStorage.getItem("rl-ghl-path");const f=P.find(p=>p.id===s);if(f)cur=f;}catch(e){}
+
+function draw(){
+  document.querySelectorAll(".sp").forEach(b=>b.setAttribute("aria-pressed",b.dataset.id===cur.id));
+  $("#sum").textContent=cur.sum;
+  let html="",last="";
+  cur.s.forEach(([d,w,k,t,det,qs])=>{
+    if(d!==last){html+=`<li class="day">${esc(d)}</li>`;last=d;}
+    const body=det.map(([type,x])=>type==="msg"?`<div class="bubble">${esc(x)}</div>`:type==="mine"?`<div class="bubble mine">${esc(x)}</div>`:type==="wf"?`<p class="wf">${esc(x)}</p>`:`<p class="note">${esc(x)}</p>`).join("")
+      +qs.map(id=>`<p class="q"><b>${id}</b>${esc(Q[id])}</p>`).join("");
+    const tags=qs.map(id=>`<span class="qtag">${id}</span>`).join("");
+    html+=`<li class="step${qs.length?" hasq":""}" data-q="${qs.join(" ")}"><span class="dot ${k}" aria-hidden="true">${ICON[k]}</span>`+
+      (body?`<details><summary><span class="when">${esc(w)}</span><span class="what">${esc(t)}${tags}</span></summary><div class="body">${body}</div></details>`
+           :`<details><summary><span class="when">${esc(w)}</span><span class="what plain">${esc(t)}</span></summary></details>`)+`</li>`;
+  });
+  $("#tl").innerHTML=html;
+  $("#tog").textContent="Abrir todos";
+}
+$("#tog").addEventListener("click",()=>{
+  const ds=[...document.querySelectorAll("#tl details")];
+  const open=ds.some(d=>!d.open);
+  ds.forEach(d=>d.open=open);
+  $("#tog").textContent=open?"Cerrar todos":"Abrir todos";
+});
+$("#qall").innerHTML=Object.entries(Q).map(([id,t])=>`<li><span><b>${id}</b> ${esc(t)}</span><button type="button" class="go" data-q="${id}">Ver en el flujo ↓</button></li>`).join("");
+document.querySelectorAll(".go").forEach(b=>b.addEventListener("click",()=>{
+  const id=b.dataset.q;
+  const p=P.find(p=>p.id==="responde"&&p.s.some(x=>x[5].includes(id)))||P.find(p=>p.s.some(x=>x[5].includes(id)));
+  if(!p)return;
+  cur=p;draw();
+  const li=[...document.querySelectorAll("#tl .step")].find(l=>l.dataset.q.split(" ").includes(id));
+  if(!li)return;
+  const d=li.querySelector("details");if(d)d.open=true;
+  li.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"});
+  li.classList.add("flash");setTimeout(()=>li.classList.remove("flash"),1600);
+}));
+let saved=null;try{saved=localStorage.getItem("rl-ghl-path")}catch(e){}
+if(!saved)cur=P.find(p=>p.id==="responde");
+draw();
+</script>
+</body>
+</html>
