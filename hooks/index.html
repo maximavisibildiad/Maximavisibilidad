@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hooks de la semana</title>
+<style>
+:root{--ink:#0B1426;--ink2:#1C2A48;--paper:#FFFFFF;--soft:#F3F5F9;--line:#D9DEE8;--muted:#5A6478;--accent:#F0FF00;--ok:#1F7A4D}
+*{box-sizing:border-box}
+body{margin:0;background:var(--soft);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+header{background:var(--ink);color:#fff;padding:40px 16px 32px}
+header .in,main{max-width:760px;margin:0 auto}
+header h1{margin:0 0 8px;font-size:30px;line-height:1.15}
+header h1 span{background:var(--accent);color:var(--ink);padding:0 6px}
+header p{margin:0;color:#C9D1E3}
+main{padding:8px 16px 80px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px 20px;margin:20px 0}
+h2{margin:0 0 12px;font-size:21px}
+h3{margin:18px 0 6px;font-size:16px}
+.num{display:inline-block;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;text-align:center;line-height:28px;font-size:14px;margin-right:8px}
+ul{padding-left:20px;margin:6px 0}
+li{margin:4px 0}
+.big{font-size:18px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:10px 0}
+.box{background:var(--soft);border-radius:10px;padding:12px}
+.box b{display:block;font-size:22px}
+.box small{color:var(--muted)}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;padding:10px 12px 10px 44px;position:relative;background:var(--soft);border-radius:10px;margin:8px 0}
+.steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;text-align:center;line-height:22px}
+.quote{border-left:4px solid var(--ink);padding:6px 12px;margin:12px 0;background:var(--soft);font-style:italic}
+.rules li{list-style:none;margin-left:-20px;padding-left:26px;position:relative}
+.rules li::before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:700}
+.no li::before{content:"✕";color:#B3261E}
+.card{border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0;background:#fff}
+.meta{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.card h3{margin:4px 0 10px;font-size:17px}
+.hook{display:flex;gap:10px;align-items:flex-start;padding:10px;border-radius:8px;border:1px solid var(--line);margin:6px 0;cursor:pointer}
+.hook input{margin-top:5px}
+.hook .k{font-weight:700}
+.hook .t{color:var(--muted);font-size:13px}
+.hook.sel{border-color:var(--ink);background:var(--soft)}
+.tag{font-size:11px;background:var(--ink);color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:2px}
+label.f{display:block;font-size:14px;font-weight:600;margin:12px 0 4px}
+textarea{width:100%;min-height:64px;border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit;resize:vertical}
+textarea:focus{outline:2px solid var(--ink);border-color:var(--ink)}
+.bar{position:sticky;bottom:0;background:var(--ink);color:#fff;padding:12px 16px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.bar span{font-size:14px;color:#C9D1E3}
+button{font:inherit;font-weight:700;border:0;border-radius:8px;padding:10px 16px;background:var(--accent);color:var(--ink);cursor:pointer}
+.ex{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ex div{background:var(--soft);border-radius:10px;padding:12px;font-size:15px}
+.ex b{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+@media (max-width:560px){.ex{grid-template-columns:1fr}header h1{font-size:25px}}
+</style>
+</head>
+<body>
+<header><div class="in">
+<h1>Cómo publicamos y cómo me ayudás con los <span>hooks</span></h1>
+<p>La estrategia de Ramiro Cubría que sigue GP, explicada simple. Al final están los hooks de la semana del 2 al 7 de noviembre para que los mejores.</p>
+</div></header>
+
+<main>
+
+<section>
+<h2><span class="num">1</span>La idea en un minuto</h2>
+<ul>
+<li><b>Le hablamos a un solo público:</b> doctores con clínica propia (odontólogos, armonizadores). No buscamos ser virales. Ramiro lo dice así:</li>
+</ul>
+<div class="quote">"Prefiero 5.000 que van a pagar que un millón que no me compran."</div>
+<ul>
+<li><b>Los reels traen gente nueva. Las historias venden</b> (más del 80 % de las ventas salen de las historias).</li>
+<li><b>Regalá en público, vendé en privado:</b> cada reel regala algo útil. La venta pasa después, por mensaje privado y en la llamada.</li>
+<li><b>Constancia:</b> publicar todos los días durante un año, sin cambiar de estrategia cada dos semanas.</li>
+<li><b>El hook es el 95 % del video.</b> Si tenemos 20 minutos para escribir un guion, 19 son para el hook. Ahí entrás vos.</li>
+</ul>
+</section>
+
+<section>
+<h2><span class="num">2</span>La semana</h2>
+<p class="big">15 reels por semana: 10 de JP a cámara y 5 solo con su voz.</p>
+<div class="grid">
+<div class="box"><b>8</b>Problema<br><small>El dolor del doctor, que diga "eso me pasa a mí"</small></div>
+<div class="box"><b>3-4</b>Solución<br><small>Qué cambia, sin enseñar el paso a paso</small></div>
+<div class="box"><b>1-2</b>Casos<br><small>Resultados reales, solo cifras verdaderas</small></div>
+<div class="box"><b>2-3</b>Mentalidad<br><small>Tumbar creencias y objeciones</small></div>
+</div>
+<p><b>Regla 70/20/10:</b> 70 % de lo que ya funciona, 20 % variaciones de eso y 10 % ideas nuevas.</p>
+<h3>Las historias, en un ciclo de un mes</h3>
+<ul>
+<li><b>3 semanas de siembra:</b> historias que regalan algo o que solo cuentan el día a día.</li>
+<li><b>1 semana de cosecha:</b> historias que invitan directo a la llamada de diagnóstico, solo si hay un motivo real (cupos, precio nuevo, algo nuevo).</li>
+</ul>
+</section>
+
+<section>
+<h2><span class="num">3</span>Cómo está armado cada reel</h2>
+<ol class="steps">
+<li><b>Hook</b> (primeros 1 a 3 segundos): frena el dedo.</li>
+<li><b>Problema</b> concreto y que duela. Nunca genérico.</li>
+<li><b>Solución:</b> el qué, no el cómo. El cómo se cuenta en la llamada.</li>
+<li><b>Prueba:</b> un dato o un caso, solo si es real.</li>
+<li><b>Cierre:</b> "Comentá <b>PALABRA</b> y te mando…" un recurso gratis. Los de mentalidad no llevan cierre.</li>
+</ol>
+</section>
+
+<section>
+<h2><span class="num">4</span>Qué hace bueno a un hook</h2>
+<p>Un hook tiene 4 partes. Cuando mejores uno, pensá en las cuatro:</p>
+<div class="grid">
+<div class="box"><b>Qué digo</b><small>Se entiende en 1 segundo, aun sin volumen</small></div>
+<div class="box"><b>Cómo lo digo</b><small>Se actúa, no se recita: energía, suspenso, pausa</small></div>
+<div class="box"><b>Qué se ve</b><small>El primer cuadro tiene algo que no cuadra y obliga a mirar</small></div>
+<div class="box"><b>Desde dónde</b><small>Cambiar de lugar: caminando, en el carro, de lejos</small></div>
+</div>
+<p>Y tiene que generar <b>curiosidad + una emoción</b> (sorpresa, miedo a perder algo, "eso me pasa"). Si no genera ninguna emoción, no está listo.</p>
+
+<h3>Ejemplo de mejora</h3>
+<div class="ex">
+<div><b>Antes</b>Hoy te voy a hablar de la importancia de responder rápido en WhatsApp.</div>
+<div><b>Después</b>Doctor, tenés un paciente en la camilla y el WhatsApp no para de sonar. ¿A cuál le contestás?</div>
+</div>
+<p style="font-size:14px;color:var(--muted)">El segundo pone al doctor en una escena que vive todos los días y le deja una pregunta sin responder.</p>
+
+<h3>Tipos que funcionan</h3>
+<ul>
+<li><b>Pregunta directa:</b> "Doctor, ¿cuántos pacientes ya te compraron y nunca volvieron?"</li>
+<li><b>Contraintuitivo:</b> "«Lo voy a pensar» no es un no."</li>
+<li><b>Escena:</b> "Imaginate: estás almorzando con tu familia y te escribe un paciente…"</li>
+<li><b>Disruptivo:</b> algo que nadie espera ver: un grito, un silencio de 3 segundos, un cartel señalado, una mini actuación, un chat falso en pantalla.</li>
+</ul>
+
+<h3>Reglas de la casa</h3>
+<ul class="rules">
+<li>Arranca con "Doctor" o lo nombra claro: así solo se queda nuestro público.</li>
+<li>Suena a JP: de "vos", como habla él, que lo entienda alguien de 14 años y que se pueda decir en voz alta sin trabarse.</li>
+<li>Lo que se ve es literal lo que se dice en ese segundo.</li>
+<li>JP siempre sale en cuadro en el hook.</li>
+<li>Corto: una o dos frases.</li>
+</ul>
+<ul class="rules no">
+<li>Nada de palabras de marketing: lead, embudo, ROAS, funnel.</li>
+<li>Nada de cifras ni resultados inventados. Si no estás segura de un dato, escribí [CONFIRMAR CON JP].</li>
+<li>Nada que prometa algo que GP no hace.</li>
+<li>Nada de "no necesitás más pacientes": eso lo dice todo el mundo.</li>
+</ul>
+</section>
+
+<section>
+<h2><span class="num">5</span>Tu parte: los hooks del 2 al 7 de noviembre</h2>
+<p>JP los graba el domingo 1 de noviembre. Para cada reel hay 3 opciones (la marcada con <span class="tag" style="margin:0">recomendado</span> es la que va hoy). Hacé esto en cada uno:</p>
+<ol>
+<li>Marcá el que más te frena el dedo.</li>
+<li>Si se te ocurre uno mejor, escribilo en "Tu versión".</li>
+<li>Al final tocá <b>Copiar para JP</b> y pegáselo por WhatsApp.</li>
+</ol>
+<p style="font-size:14px;color:var(--muted)">Lo que escribas queda guardado en este navegador aunque cierres la página.</p>
+<div id="reels"></div>
+</section>
+
+</main>
+
+<div class="bar"><span id="cuenta">0 de 0 revisados</span><button id="copiar">Copiar para JP</button></div>
+
+<script>
+const REELS = [{"head": "LUN 2 nov — Reel 2/3 — Dolor — CAM · Claude — Estás respondiendo WhatsApp entre paciente y paciente", "hooks": [{"k": "A", "tipo": "Escenario", "txt": "Doctor, tenés un paciente en la camilla y el WhatsApp no para de sonar. ¿A cuál le contestás?"}, {"k": "B", "tipo": "Problema directo", "txt": "Ese mensaje que mandás con los guantes puestos, entre un paciente y otro, te está costando pacientes."}, {"k": "C", "tipo": "DISRUPTIVO · audio (sonido)", "txt": "(Pantalla en negro 2 s, solo el sonido de varias notificaciones de WhatsApp seguidas; corte seco a JP.) Eso que oís son pacientes esperando que termines el procedimiento."}], "rec": "A"}, {"head": "LUN 2 nov — Reel 3/3 — Dolor — CAM · Claude — El paciente que dijo «lo voy a pensar» y nunca volvió", "hooks": [{"k": "A", "tipo": "Pregunta directa", "txt": "Doctor, ese paciente de diseño de sonrisa que te dijo «lo voy a pensar», ¿cuántas veces le volviste a escribir?"}, {"k": "B", "tipo": "Contraintuitivo", "txt": "«Lo voy a pensar» no es un no. Es un paciente esperando que alguien le vuelva a escribir."}, {"k": "C", "tipo": "DISRUPTIVO · distancia de cámara y silencio", "txt": "(Mirás el celular en silencio 3 s, sin hablar; después levantás la mirada.) Así suena el silencio con el paciente que dijo «lo voy a pensar»."}], "rec": "C"}, {"head": "MAR 3 nov — Reel 1/3 — Dolor — CAM · IA-EDITADO 3A — Tu clínica no está lista para crecer y no lo sabés", "hooks": [{"k": "A", "tipo": "Problema directo", "txt": "Doctor, tu clínica no está lista para crecer. Y lo peor es que no lo sabés."}, {"k": "B", "tipo": "Contraintuitivo", "txt": "Crecer no es traer más pacientes. Es que tu clínica aguante los que ya llegan."}, {"k": "C", "tipo": "DISRUPTIVO · H3 El iPad que no existe (toma IA)", "txt": "JP dice la línea A, pero los primeros 3 s son una toma generada: JP explicando sobre una tableta transparente flotante que no existe, con casillas que se marcan en rojo."}], "rec": "A"}, {"head": "MAR 3 nov — Reel 2/3 — Valor — VOZ · IA-PRODUCIDO — Cuándo abrir una segunda sede: 4 condiciones", "hooks": [{"k": "A", "tipo": "Problema directo", "txt": "Doctor, antes de firmar el arriendo de tu segunda sede, frená. Respondé cuatro cosas."}, {"k": "B", "tipo": "Update potente", "txt": "Nadie te dice esto antes de abrir una segunda sede: el problema casi nunca es la plata."}, {"k": "C", "tipo": "DISRUPTIVO · Formato 4 (toma IA)", "txt": "Voz de JP en off sobre la toma: Antes de firmar el contrato de tu segunda sede… leé esto."}], "rec": "A"}, {"head": "MAR 3 nov — Reel 3/3 — Valor — VOZ · IA-PRODUCIDO — Recuperá pacientes que ya te compraron (recurrencia)", "hooks": [{"k": "A", "tipo": "Pregunta directa", "txt": "Doctor, ¿cuántos pacientes ya te compraron una vez y nunca volvieron?"}, {"k": "B", "tipo": "Curiosidad", "txt": "Tu mejor paciente nuevo del mes probablemente ya está en tu WhatsApp. Te compró hace meses."}, {"k": "C", "tipo": "DISRUPTIVO · Formato 4 (toma IA)", "txt": "Voz de JP: Doctor, tenés pacientes dormidos en tu WhatsApp. Gente que ya te compró y nunca volvió."}], "rec": "C"}, {"head": "MIÉ 4 nov — Reel 1/2 — Autoridad — CAM · IA-EDITADO 3B — Antes y después del WhatsApp de una clínica (Autoridad de Proceso)", "hooks": [{"k": "A", "tipo": "Contraste", "txt": "Así se ve el WhatsApp de una clínica que pierde pacientes. Y así el de una que los agenda."}, {"k": "B", "tipo": "Mismo paciente, dos clínicas", "txt": "Mismo paciente, mismo mensaje, dos clínicas distintas. Mirá la diferencia."}, {"k": "C", "tipo": "DISRUPTIVO · dos celulares reales (objeto en cámara)", "txt": "(JP pone sobre el escritorio dos celulares lado a lado: el de la izquierda apagado, el de la derecha con una notificación sin texto legible, y señala uno y otro sin hablar 1 segundo.) Mismo paciente. Mismo mensaje. Una clínica contesta. La otra, no."}], "rec": "B"}, {"head": "MIÉ 4 nov — Reel 2/2 — Dolor — CAM · IA-EDITADO 3C — Tu equipo no sabe vender una valoración", "hooks": [{"k": "A", "tipo": "Problema directo", "txt": "Doctor, tu equipo consigue que el paciente llegue a la valoración. Y ahí no sabe cerrarla."}, {"k": "B", "tipo": "Escena", "txt": "Imaginate: la paciente llegó, le encantó el plan, preguntó el valor… y tu asistente le dijo «cualquier cosa me avisa»."}, {"k": "C", "tipo": "DISRUPTIVO · H8 Mini actuación de la escena", "txt": "(JP actúa a la asistente en la valoración, con voz de apuro y sin mirar al paciente: «El diseño cuesta tanto. ¿Lo piensa? Bueno, chao.» Pausa, y corte a JP a cámara.) Así se pierde una valoración."}], "rec": "A"}, {"head": "JUE 5 nov — Reel 1/2 — Dolor — CAM · IA-EDITADO 3C — Respondés el WhatsApp de la clínica desde tu celular personal", "hooks": [{"k": "A", "tipo": "Pregunta directa", "txt": "Doctor, ¿el WhatsApp de tu clínica es el mismo de tu celular personal?"}, {"k": "B", "tipo": "Escena", "txt": "Imaginate: estás almorzando con tu familia y te llega el mensaje de un paciente. ¿Contestás o lo dejás para después?"}, {"k": "C", "tipo": "DISRUPTIVO · H11 Historia falsa", "txt": "(El primer cuadro parece el WhatsApp personal de un doctor: entre «Grupo familia · ¿Quién lleva el postre?» y «Mamá», aparece un mensaje de un paciente «Hola, ¿cuánto cuesta el diseño de sonrisa?» sin contestar. JP asoma encima, con cara de apuro.) Este es tu celular. Y esta paciente está esperando."}], "rec": "C"}, {"head": "JUE 5 nov — Reel 2/2 — Venta — VOZ · IA-PRODUCIDO — Qué pasa en la llamada de diagnóstico gratuita (reel de cosecha)", "hooks": [{"k": "A", "tipo": "Pregunta directa", "txt": "Doctor, ¿qué pasa en la llamada de diagnóstico que te ofrezco? Te lo cuento antes de que agendes."}, {"k": "B", "tipo": "Contraintuitivo", "txt": "Nadie te explica qué pasa en una llamada antes de agendarla. Yo sí."}, {"k": "C", "tipo": "DISRUPTIVO · Formato 4 (toma IA)", "txt": "Voz de JP en off: Esto es lo que hay detrás de la puerta de mi llamada."}], "rec": "A"}, {"head": "VIE 6 nov — Reel 1/2 — Objeciones — VOZ · IA-PRODUCIDO — «Mi colega no invierte en publicidad y le va bien»", "hooks": [{"k": "A", "tipo": "Concesión", "txt": "Doctor, tu colega no invierte en publicidad y le va bien. Puede ser cierto."}, {"k": "B", "tipo": "Pregunta", "txt": "«A mi colega le va bien sin publicidad.» Perfecto. ¿Y quién decide cuántos pacientes le llegan el mes que viene?"}, {"k": "C", "tipo": "DISRUPTIVO · Formato 4 (toma IA)", "txt": "Voz de JP en off sobre la toma: Tu colega tiene la silla llena. La pregunta es hasta cuándo, y quién lo decide."}], "rec": "C"}, {"head": "VIE 6 nov — Reel 2/2 — Objeciones — VOZ · IA-PRODUCIDO — «Mi agenda ya está casi llena»", "hooks": [{"k": "A", "tipo": "Pregunta directa", "txt": "«Mi agenda ya está casi llena.» Qué buena noticia, doctor. Pero te hago una pregunta: ¿llena de qué?"}, {"k": "B", "tipo": "Contraintuitivo", "txt": "Agenda llena no es lo mismo que clínica rentable."}, {"k": "C", "tipo": "DISRUPTIVO · Formato 4 (toma IA)", "txt": "Voz de JP en off: Tu agenda está casi llena. ¿Llena de qué?"}], "rec": "C"}, {"head": "SÁB 7 nov — Reel 1/3 — Dolor — CAM · Claude — Tus pacientes felices no te recomiendan porque nadie se los pidió", "hooks": [{"k": "A", "tipo": "Problema directo", "txt": "Doctor, tus pacientes quedaron felices. Pero nadie les pidió que te recomendaran."}, {"k": "B", "tipo": "Contraintuitivo", "txt": "Un paciente feliz no recomienda solo. Recomienda cuando alguien se lo pide en el momento justo."}, {"k": "C", "tipo": "DISRUPTIVO · H10 Cartel señalado", "txt": "(JP señala con el dedo, exagerado y muchas veces, un cartel con la pregunta «¿ALGUIEN LE PIDIÓ QUE TE RECOMIENDE?» junto a la foto genérica de un paciente sonriendo.) ¿Y a este paciente feliz? ¿Alguien le pidió que te recomiende? ¿Alguien? ¿Alguien?"}], "rec": "C"}, {"head": "SÁB 7 nov — Reel 2/3 — Dolor — CAM · Claude — Das descuento para cerrar y terminás trabajando gratis", "hooks": [{"k": "A", "tipo": "Problema directo", "txt": "Doctor, ¿cuántas veces diste descuento para cerrar a un paciente? ¿Y cuánto te quedó de verdad?"}, {"k": "B", "tipo": "Escena", "txt": "Imaginate: el paciente dice «está caro». Para no perderlo, bajás el precio. Y después de los materiales y tu tiempo, casi no te queda nada."}, {"k": "C", "tipo": "DISRUPTIVO · H2 El grito", "txt": "(Primerísimo plano, JP grita desde el abdomen.) ¡Doctorrrr! ¡Estás trabajando gratis! (Zoom punch-in en el grito, corte en seco a calma.) Tranquilo. Te explico."}], "rec": "C"}, {"head": "SÁB 7 nov — Reel 3/3 — Autoridad — CAM · IA-EDITADO 3A — «Solo te pago si funciona»: trabajar con datos, no con promesas", "hooks": [{"k": "A", "tipo": "Problema directo (original)", "txt": "Juan, yo te pago solamente si funciona."}, {"k": "B", "tipo": "Contraintuitivo", "txt": "«Solo te pago si funciona.» Perfecto. Entonces usted también me opera gratis."}, {"k": "C", "tipo": "DISRUPTIVO · objeto en cámara (guante)", "txt": "(JP, con un guante de látex puesto, extiende a cámara la palma abierta, como esperando que le paguen, sin hablar 1 segundo.) «Yo te pago solo si funciona.» Entonces usted también me opera gratis."}], "rec": "A"}];
+const OBJ = {Dolor:"Problema",Valor:"Solución",Venta:"Solución",Autoridad:"Caso",Objeciones:"Mentalidad",Personal:"Mentalidad"};
+const KEY = "hooks_2nov_7nov";
+let st = {};
+try { st = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} cuenta(); }
+function esc(s){ return s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+const cont = document.getElementById("reels");
+REELS.forEach((r, i) => {
+  const p = r.head.split(" — ");
+  const dia = p[0], tipo = p[2], formato = p[3].split(" ")[0], titulo = p.slice(4).join(" — ");
+  r.dia = dia; r.titulo = titulo;
+  const s = st[i] || (st[i] = {});
+  const el = document.createElement("div");
+  el.className = "card";
+  el.innerHTML = `<div class="meta">${esc(dia)} · ${OBJ[tipo] || tipo} · ${formato === "CAM" ? "A cámara" : "Solo voz"}</div>
+<h3>${esc(titulo)}</h3>
+${r.hooks.map(h => `<label class="hook${s.sel === h.k ? " sel" : ""}"><input type="radio" name="r${i}" value="${h.k}"${s.sel === h.k ? " checked" : ""}><div><span class="k">${h.k}</span> <span class="t">${esc(h.tipo)}</span>${r.rec === h.k ? '<span class="tag">recomendado</span>' : ""}<br>${esc(h.txt)}</div></label>`).join("")}
+<label class="f">Tu versión (opcional)</label>
+<textarea data-f="mio" placeholder="Doctor, …">${esc(s.mio || "")}</textarea>
+<label class="f">¿Por qué la cambiarías? (opcional)</label>
+<textarea data-f="nota" placeholder="Ej.: el A no se entiende sin volumen">${esc(s.nota || "")}</textarea>`;
+  el.querySelectorAll("input").forEach(x => x.addEventListener("change", () => {
+    s.sel = x.value;
+    el.querySelectorAll(".hook").forEach(l => l.classList.toggle("sel", l.querySelector("input").checked));
+    save();
+  }));
+  el.querySelectorAll("textarea").forEach(t => t.addEventListener("input", () => { s[t.dataset.f] = t.value; save(); }));
+  cont.appendChild(el);
+});
+function cuenta(){
+  const n = REELS.filter((_, i) => st[i] && (st[i].sel || (st[i].mio || "").trim())).length;
+  document.getElementById("cuenta").textContent = `${n} de ${REELS.length} revisados`;
+}
+cuenta();
+document.getElementById("copiar").addEventListener("click", async () => {
+  const lineas = ["Hooks semana 2-7 nov"];
+  REELS.forEach((r, i) => {
+    const s = st[i] || {};
+    if (!s.sel && !(s.mio || "").trim()) return;
+    lineas.push("", `${r.dia} · ${r.titulo}`);
+    if (s.sel) lineas.push(`Elijo: ${s.sel}${s.sel === r.rec ? " (el recomendado)" : ""}`);
+    if ((s.mio || "").trim()) lineas.push(`Mi versión: ${s.mio.trim()}`);
+    if ((s.nota || "").trim()) lineas.push(`Por qué: ${s.nota.trim()}`);
+  });
+  const txt = lineas.join("\n");
+  const b = document.getElementById("copiar");
+  try { await navigator.clipboard.writeText(txt); b.textContent = "Copiado ✓"; }
+  catch (e) { window.prompt("Copiá este texto:", txt); }
+  setTimeout(() => b.textContent = "Copiar para JP", 2000);
+});
+</script>
+</body>
+</html>
