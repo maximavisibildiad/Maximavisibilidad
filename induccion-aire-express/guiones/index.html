@@ -45,7 +45,7 @@ pregúntale a JP por WhatsApp antes de hacerlo: es mejor preguntar que adivinar.
 <tr>
 <td>3</td>
 <td><code>02_SPEECH_CONFIRMACION_Y_RECORDATORIO.docx</code></td>
-<td>El guion de las confirmaciones (día antes y mismo día) y del seguimiento de cotización (D+1 y D+3).</td>
+<td>El guion de la confirmación del día antes (solo a quien no confirmó por mensaje) y del seguimiento de cotización (D+1 y D+3).</td>
 </tr>
 <tr>
 <td>4</td>
@@ -575,7 +575,7 @@ the furnace is easy to reach, and the contract is signed before we start.&quot;
 (Quedaste para la instalación el [día] a las [hora] en [dirección]. Toma más o menos un día. Que haya un adulto en casa, el furnace
 accesible y el contrato firmado antes de empezar.)
 </code></pre>
-<p>Las llamadas de confirmación del punto 3 aplican igual a las instalaciones; además confirmas que el contrato esté firmado.</p>
+<p>La regla de confirmación del punto 3 aplica igual a las instalaciones; si llamas, confirmas además que el contrato esté firmado.</p>
 <p>Si es inquilino: pedir que el dueño esté enterado de la visita (la política exacta con inquilinos la confirma Juan David).</p>
 <p><strong>Tres reglas que no se saltan (caso real, 13-oct: una clienta esperó desde las 10 a.m., nadie llegó porque nunca se le pidió
 la dirección, la visita se movió por chat a las 2 p.m. sin moverla en el calendario, el técnico llegaba entre 3 y 4 p.m. y
@@ -609,8 +609,11 @@ canceló):</strong>
 </tbody>
 </table></div>
 <p>La hora del recordatorio es la hora de <strong>inicio</strong> de la visita.</p>
-<h2>3. Llamadas de confirmación — a TODAS las visitas, el día antes y el mismo día (JP 13-oct; las hace el Setter, con doble marcado)</h2>
-<p>Aunque el cliente reciba los SMS automáticos, la llamada se hace igual: el día antes (11:00 a.m. – 1:00 p.m.) y el mismo día en la mañana, antes de la hora de la visita.</p>
+<h2>3. Llamada de confirmación — solo si el cliente no confirmó (JP 29-oct)</h2>
+<p>Las visitas se confirman con los mensajes automáticos del punto 2. El día antes (11:00 a.m. – 1:00 p.m.) revisas las visitas de mañana en el calendario y la conversación de cada cliente:
+- <strong>Respondió confirmando</strong> el recordatorio (YES, OK, see you, etc.): no llamas.
+- <strong>No respondió</strong>, o <strong>no marcó la casilla</strong> (cita en Unconfirmed, no le llega ningún SMS): lo llamas con doble marcado.</p>
+<p>No hay llamada el mismo día de la visita.</p>
 <pre><code>&quot;Hi [Name], it's [your name] from Aire Express. Just confirming your visit tomorrow, [Day], between [Time Window] at [Address]. Does that still work?&quot;
 (Hola [nombre], soy [tu nombre] de Aire Express. Te confirmo la visita de mañana [día] entre [hora] en [dirección]. ¿Sigue bien?)
 </code></pre>
@@ -618,13 +621,8 @@ canceló):</strong>
 <li><strong>Confirma también la dirección</strong> ("Is the visit at [street, city]?"). Sin dirección, no hay visita.</li>
 <li><strong>Sí:</strong> "Great, see you tomorrow." Formulario de resultado: <strong>Confirmó visita</strong>.</li>
 <li><strong>Quiere cambiar:</strong> ofrecer 2 horarios nuevos y mover la visita en el calendario. Formulario de resultado: <strong>Reprogramó visita</strong>.</li>
-<li><strong>No contesta:</strong> doble marcado; buzón de voz con la fecha y hora; se vuelve a intentar el mismo día de la visita en la mañana.</li>
+<li><strong>No contesta:</strong> doble marcado y buzón de voz con la fecha y la hora. Formulario de resultado: <strong>No contesta</strong>, y aviso en el grupo a Juan David antes de que salga a la visita.</li>
 </ul>
-<p><strong>El mismo día (mañana):</strong></p>
-<pre><code>&quot;Hi [Name], it's [your name] from Aire Express. Just confirming our technician's visit today between [Time Window]. Is someone 18 or older going to be home?&quot;
-(Te confirmo la visita de hoy entre [hora]. ¿Va a haber un adulto en casa?)
-</code></pre>
-<p>Formulario de resultado: <strong>Confirmó visita</strong> (o <strong>Reprogramó visita</strong>, con la visita movida en el calendario). Si no contesta: aviso en el grupo a Juan David antes de que salga.</p>
 <h2>4. Antes de salir a la visita</h2>
 <p>Llamada corta 30-60 minutos antes si el cliente no confirmó: "I'm on my way, I'll be there around [time]."
 (Voy en camino, llego como a las [hora].)</p>
@@ -682,7 +680,7 @@ mide</strong>.</p>
 <td>Explicar formas de pago (solo la frase de la sección 6 si el cliente no quiere adelantar dinero)</td>
 </tr>
 <tr>
-<td>Llamadas de confirmación de <strong>todas</strong> las visitas: el día antes y el mismo día</td>
+<td>Llamada de confirmación el día antes, solo a quien no respondió confirmando el recordatorio o no marcó la casilla</td>
 <td>Pasar a <strong>Ganado</strong> o <strong>Trabajo Realizado</strong> sin que Juan David confirme</td>
 </tr>
 <tr>
@@ -801,7 +799,7 @@ resuelve en ese mismo bloque.</p>
 </tr>
 <tr>
 <td><strong>11:00 – 1:00</strong></td>
-<td>Llamadas de confirmación de <strong>todas</strong> las visitas de mañana (speech 02, punto 3). Devolver llamadas perdidas. Las visitas de hoy se confirman en la mañana, antes de su hora</td>
+<td>Visitas de mañana: llamas solo a quien no respondió confirmando el recordatorio o no marcó la casilla (speech 02, punto 3). Devolver llamadas perdidas</td>
 <td>Formulario de resultado: <code>Confirmó visita</code> o <code>Reprogramó visita</code></td>
 </tr>
 <tr>
@@ -917,9 +915,9 @@ resuelve en ese mismo bloque.</p>
 </tr>
 <tr>
 <td>11</td>
-<td><strong>Confirmación de todas las visitas</strong> (tengan o no casilla)</td>
+<td><strong>Visita de mañana sin confirmar</strong> (no respondió el recordatorio o no marcó la casilla)</td>
 <td>Llamada del speech 02, punto 3, con doble marcado. Si quiere cambiar: 2 horarios nuevos y mover la visita</td>
-<td>El día antes (11:00 a.m. – 1:00 p.m.) y el mismo día en la mañana</td>
+<td>El día antes (11:00 a.m. – 1:00 p.m.)</td>
 <td>Formulario de resultado: <code>Confirmó visita</code> o <code>Reprogramó visita</code></td>
 </tr>
 <tr>
@@ -1059,9 +1057,9 @@ Los 10 resultados: Agendó visita · No contesta · Llamar después · No intere
 <td>Formularios por lead</td>
 </tr>
 <tr>
-<td>Confirmación de todas las visitas</td>
-<td><strong>100%</strong> el día antes y el mismo día</td>
-<td>Visitas de mañana sin nota de confirmación</td>
+<td>Visitas de mañana sin confirmar, llamadas</td>
+<td><strong>100%</strong> el día antes</td>
+<td>Visitas de mañana sin respuesta al recordatorio y sin formulario de resultado</td>
 </tr>
 <tr>
 <td>Show-up (visitas que se hacen / agendadas)</td>
