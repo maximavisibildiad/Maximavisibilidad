@@ -133,7 +133,7 @@ pregúntale a JP por WhatsApp antes de hacerlo: es mejor preguntar que adivinar.
 <p>Tú haces 3 cosas: <strong>llamas, llenas el formulario de resultado y haces las tareas que te llegan.</strong> Lo demás lo hace el sistema.
 1. Llega un lead: te crea la tarea "Llamar - Intento 1".
 2. Llamas desde la app (doble marcado).
-3. Al colgar llenas el formulario (https://api.leadconnectorhq.com/widget/form/DGoYUAAWeaqimug9GUci) con uno de los 8 resultados: Agendó visita · No contesta · Llamar después · No interesado · Número equivocado · Fuera de zona · Esperando foto / precio · Precio aceptado - enviar contrato.
+3. Al colgar llenas el formulario (https://api.leadconnectorhq.com/widget/form/DGoYUAAWeaqimug9GUci) con uno de los 10 resultados: Agendó visita · No contesta · Llamar después · No interesado · Número equivocado · Fuera de zona · Esperando foto / precio · Precio aceptado - enviar contrato · Confirmó visita · Reprogramó visita.
 4. Reemplazo de furnace: foto del furnace → Juan David da el precio → contrato que tú mandas a mano.</p>
 <p>El detalle completo está en la Inducción Comercial (sección "El flujo en 1 minuto").</p>
 <h2>Cosas que no cambian (para que no haya dudas)</h2>
@@ -299,7 +299,7 @@ de anticipo o de financiamiento.</p></section><section id="s01" class="card"><p 
 </tbody>
 </table></div>
 <p><strong>Doble marcado:</strong> cada intento son 2 llamadas seguidas (si no contesta, vuelves a marcar de inmediato). El buzón de voz, después de la segunda marcada. 6 intentos = 12 marcadas en 10 días. El sistema te crea cada tarea "Llamar - Intento N" en su día; tú no programas nada.</p>
-<p><strong>Después de CADA llamada</strong> llenas el formulario de resultado (link en la Inducción, paso 3.5): https://api.leadconnectorhq.com/widget/form/DGoYUAAWeaqimug9GUci . Los 8 resultados: Agendó visita · No contesta · Llamar después · No interesado · Número equivocado · Fuera de zona · Esperando foto / precio · Precio aceptado - enviar contrato. Sin el formulario no se completa la tarea.</p>
+<p><strong>Después de CADA llamada</strong> llenas el formulario de resultado (link en la Inducción, paso 3.5): https://api.leadconnectorhq.com/widget/form/DGoYUAAWeaqimug9GUci . Los 10 resultados: Agendó visita · No contesta · Llamar después · No interesado · Número equivocado · Fuera de zona · Esperando foto / precio · Precio aceptado - enviar contrato · Confirmó visita · Reprogramó visita. Sin el formulario no se completa la tarea.</p>
 <p>Franjas para llamar (JP 13-oct): <strong>9:00 a.m. – 12:00 m.</strong> y <strong>4:00 – 7:00 p.m.</strong> (hora de Ohio): la gente ya llegó al trabajo o ya está descansando. Nunca antes de las 9:00 ni después de las 8:00 p.m.
 Si el lead aceptó mensajes, el sistema le manda sus SMS de seguimiento; tú no le escribes a mano. Los leads del formulario de Facebook/Instagram, por ahora solo reciben llamadas (los correos sí salen). Si responde STOP, el sistema le bloquea los SMS: no le escribas por texto.</p>
 <hr />
@@ -616,15 +616,15 @@ canceló):</strong>
 </code></pre>
 <ul>
 <li><strong>Confirma también la dirección</strong> ("Is the visit at [street, city]?"). Sin dirección, no hay visita.</li>
-<li><strong>Sí:</strong> "Great, see you tomorrow." Nota: <code>Resultado: Confirmó</code>.</li>
-<li><strong>Quiere cambiar:</strong> ofrecer 2 horarios nuevos y mover la visita en el calendario. Nota: <code>Resultado: Reprogramó</code>.</li>
+<li><strong>Sí:</strong> "Great, see you tomorrow." Formulario de resultado: <strong>Confirmó visita</strong>.</li>
+<li><strong>Quiere cambiar:</strong> ofrecer 2 horarios nuevos y mover la visita en el calendario. Formulario de resultado: <strong>Reprogramó visita</strong>.</li>
 <li><strong>No contesta:</strong> doble marcado; buzón de voz con la fecha y hora; se vuelve a intentar el mismo día de la visita en la mañana.</li>
 </ul>
 <p><strong>El mismo día (mañana):</strong></p>
 <pre><code>&quot;Hi [Name], it's [your name] from Aire Express. Just confirming our technician's visit today between [Time Window]. Is someone 18 or older going to be home?&quot;
 (Te confirmo la visita de hoy entre [hora]. ¿Va a haber un adulto en casa?)
 </code></pre>
-<p>Nota: <code>Resultado: Confirmó</code> (o <code>Reprogramó</code> con la visita movida). Si no contesta: aviso en el grupo a Juan David antes de que salga.</p>
+<p>Formulario de resultado: <strong>Confirmó visita</strong> (o <strong>Reprogramó visita</strong>, con la visita movida en el calendario). Si no contesta: aviso en el grupo a Juan David antes de que salga.</p>
 <h2>4. Antes de salir a la visita</h2>
 <p>Llamada corta 30-60 minutos antes si el cliente no confirmó: "I'm on my way, I'll be there around [time]."
 (Voy en camino, llego como a las [hora].)</p>
@@ -802,7 +802,7 @@ resuelve en ese mismo bloque.</p>
 <tr>
 <td><strong>11:00 – 1:00</strong></td>
 <td>Llamadas de confirmación de <strong>todas</strong> las visitas de mañana (speech 02, punto 3). Devolver llamadas perdidas. Las visitas de hoy se confirman en la mañana, antes de su hora</td>
-<td>Nota <code>Resultado: Confirmó</code> o <code>Reprogramó</code></td>
+<td>Formulario de resultado: <code>Confirmó visita</code> o <code>Reprogramó visita</code></td>
 </tr>
 <tr>
 <td><strong>1:00 – 1:15</strong></td>
@@ -920,7 +920,7 @@ resuelve en ese mismo bloque.</p>
 <td><strong>Confirmación de todas las visitas</strong> (tengan o no casilla)</td>
 <td>Llamada del speech 02, punto 3, con doble marcado. Si quiere cambiar: 2 horarios nuevos y mover la visita</td>
 <td>El día antes (11:00 a.m. – 1:00 p.m.) y el mismo día en la mañana</td>
-<td>Nota <code>Confirmó</code> o <code>Reprogramó</code></td>
+<td>Formulario de resultado: <code>Confirmó visita</code> o <code>Reprogramó visita</code></td>
 </tr>
 <tr>
 <td>11b</td>
@@ -989,7 +989,7 @@ visita se crea en <strong>AIR EXPRESS - Service Visit</strong> en el momento, au
 <h2>7. Lo que deja en GHL (si no está en GHL, no pasó)</h2>
 <p><strong>Después de CADA llamada, en el momento, el formulario de resultado</strong> (Inducción, módulo 3.5):
 https://api.leadconnectorhq.com/widget/form/DGoYUAAWeaqimug9GUci — teléfono del lead, resultado y observaciones (lo que dijo el cliente, con sus palabras).
-Los 8 resultados: Agendó visita · No contesta · Llamar después · No interesado · Número equivocado · Fuera de zona · Esperando foto / precio · Precio aceptado - enviar contrato.</p>
+Los 10 resultados: Agendó visita · No contesta · Llamar después · No interesado · Número equivocado · Fuera de zona · Esperando foto / precio · Precio aceptado - enviar contrato · Confirmó visita · Reprogramó visita.</p>
 <p><strong>La nota escrita queda solo para la visita:</strong> <code>Visitó: Sí | Compró: Sí | Valor: … | Anticipo: …</code>.</p>
 <p><strong>Etapas</strong> (pipeline "Aire Express — Visitas"; casi todas las mueve el sistema, Inducción módulo 6):
 | Cuándo | Etapa |
