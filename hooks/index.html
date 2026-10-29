@@ -210,8 +210,17 @@ document.getElementById("copiar").addEventListener("click", async () => {
   });
   const txt = lineas.join("\n");
   const b = document.getElementById("copiar");
-  try { await navigator.clipboard.writeText(txt); b.textContent = "Copiado ✓"; }
-  catch (e) { window.prompt("Copiá este texto:", txt); }
+  let ok = false;
+  try { await navigator.clipboard.writeText(txt); ok = true; } catch (e) {}
+  if (!ok) {
+    const ta = document.createElement("textarea");
+    ta.value = txt; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.top = "0"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.focus(); ta.setSelectionRange(0, txt.length);
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  if (ok) b.textContent = "Copiado ✓";
+  else window.prompt("Copiá este texto:", txt);
   setTimeout(() => b.textContent = "Copiar para JP", 2000);
 });
 </script>
